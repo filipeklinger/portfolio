@@ -39,7 +39,7 @@ const techGroups = [
 ];
 
 const TechStack: React.FC = () => (
-  <section id="techstack" className="w-full max-w-4xl mx-auto py-20 rounded-xl text-white mb-8">
+  <section id="techstack" className="w-full max-w-4xl mx-auto py-20 rounded-xl text-white mb-8 px-4">
     <h2 className="text-2xl font-bold mb-8 text-white text-center">Tecnologias</h2>
     <div className="flex flex-col gap-8">
       {techGroups.map((group) => (

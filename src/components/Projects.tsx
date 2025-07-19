@@ -17,7 +17,7 @@ const projects = [
 ];
 
 const Projects: React.FC = () => (
-  <section id="projects" className="w-full max-w-4xl mx-auto py-20 rounded-xl text-white mb-8">
+  <section id="projects" className="w-full max-w-4xl mx-auto py-20 rounded-xl text-white mb-8 px-4">
     <h2 className="text-2xl font-bold mb-8 text-white text-center">Projetos</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {projects.map((project, idx) => (

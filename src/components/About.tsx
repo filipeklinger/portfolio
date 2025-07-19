@@ -1,7 +1,7 @@
 import React from 'react';
 
 const About: React.FC = () => (
-  <section id="about" className="rounded-xl bg-white/20 backdrop-blur-md shadow-lg w-full max-w-4xl mx-auto py-12 flex flex-col items-center text-white mb-8">
+  <section id="about" className="rounded-xl bg-white/20 backdrop-blur-md shadow-lg w-full max-w-4xl mx-auto py-12 flex flex-col items-center text-white mb-8 px-4">
     <div className="flex flex-col items-center gap-4 w-full">
       <img
         src="/src/assets/eu.jpeg"
