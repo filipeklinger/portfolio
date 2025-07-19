@@ -19,5 +19,22 @@ export default tseslint.config([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    linterOptions: {
+      rules: {
+        // Ignora at-rules desconhecidas do Tailwind
+        'css/unknownAtRules': [
+          'error',
+          {
+            ignoreAtRules: [
+              'tailwind',
+              'apply',
+              'variants',
+              'responsive',
+              'screen',
+            ],
+          },
+        ],
+      },
+    },
   },
 ])
