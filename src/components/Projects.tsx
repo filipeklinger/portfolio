@@ -21,7 +21,7 @@ const Projects: React.FC = () => (
     <h2 className="text-2xl font-bold mb-8 text-white text-center">Projetos</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {projects.map((project, idx) => (
-        <div key={idx} className="border border-white/30 rounded-lg p-6 bg-white/10 shadow-sm flex flex-col">
+        <div key={idx} className="border border-white/30 rounded-lg p-6 bg-white/20 backdrop-blur-md shadow-sm flex flex-col">
           <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
           <p className="text-white/80 mb-2">{project.description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
