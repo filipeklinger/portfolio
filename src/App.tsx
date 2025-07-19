@@ -10,7 +10,7 @@ function App() {
       {/* Background SVG fixo */}
       <div className="fixed inset-0 -z-10 w-full h-full">
         <img
-          src="/src/assets/circuit-board.svg"
+          src="circuit-board.svg"
           alt="background"
           className="w-full h-full object-cover"
           draggable={false}

@@ -4,7 +4,7 @@ const About: React.FC = () => (
   <section id="about" className="rounded-xl bg-white/20 backdrop-blur-md shadow-lg w-full max-w-4xl mx-auto py-12 flex flex-col items-center text-white mb-8 px-4">
     <div className="flex flex-col items-center gap-4 w-full">
       <img
-        src="/src/assets/eu.jpeg"
+        src="eu.jpeg"
         alt="Foto de Filipe Klinger"
         className="w-32 h-32 rounded-full object-cover border-4 border-white/40 shadow-lg mb-2"
         draggable={false}
