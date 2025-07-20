@@ -101,14 +101,23 @@ const Projects: React.FC = () => {
                 <span key={t} className="text-xs bg-gray-200 rounded px-2 py-1 text-gray-800">{t}</span>
               ))}
             </div>
-            <a
-              href={selectedProject.systemLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-            >
-              Acessar sistema
-            </a>
+            {selectedProject.systemLink ? (
+              <a
+                href={selectedProject.systemLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+              >
+                Acessar sistema
+              </a>
+            ) : (
+              <button
+                className="inline-block bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed opacity-60"
+                disabled
+              >
+                Acessar sistema
+              </button>
+            )}
           </div>
         </div>
       )}
