@@ -17,6 +17,6 @@ export default Contact;
 export const Footer: React.FC = () => (
   <footer className="w-full bg-[#0E2A47] text-white flex flex-col items-center py-4 mt-0">
     <hr className="w-3/4 border-gray-400 mb-2" />
-    <span className="text-sm">© Copyright {new Date().getFullYear()}</span>
+    <span className="w-3/4 text-sm">© Copyright {new Date().getFullYear()}</span>
   </footer>
 );
