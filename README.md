@@ -3,7 +3,7 @@
 Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e experiências profissionais de forma moderna e responsiva.
 
 ## Objetivo
-Reunir e destacar informações relevantes sobre minha trajetória, tecnologias dominadas e formas de contato, servindo como cartão de visitas digital para recrutadores, parceiros e interessados.
+Reunir e destacar informações relevantes sobre minha trajetória, tecnologias dominadas e formas de contato, servindo como cartão de visitas digital.
 
 ## Tecnologias Utilizadas
 - [React](https://react.dev/) – Biblioteca para construção de interfaces
