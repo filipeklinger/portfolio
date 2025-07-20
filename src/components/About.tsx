@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Code2, Server, MonitorSmartphone, Cloud } from 'lucide-react';
+import { User, Code2, MonitorSmartphone } from 'lucide-react';
 
 const About: React.FC = () => (
   <div className="flex flex-col items-center w-full px-4">
