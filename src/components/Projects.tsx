@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
       {/* Modal */}
       {modalOpen && selectedProject && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full relative text-black">
+          <div className="bg-white rounded-lg p-6 w-[80vw] max-w-3xl relative text-black">
             <button
               onClick={handleCloseModal}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl"
@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
             >
               &times;
             </button>
-            <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-56 object-cover rounded mb-4" />
+            <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-96 object-cover object-center rounded mb-4" />
             <h3 className="text-xl font-semibold mb-2">{selectedProject.title}</h3>
             <p className="mb-2">{selectedProject.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
