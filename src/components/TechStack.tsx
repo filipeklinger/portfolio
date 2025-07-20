@@ -23,6 +23,7 @@ const techGroups = [
         items: [
             { name: 'React' },
             { name: 'Angular' },
+            { name: 'Html + Js' },
         ],
     },
     {
