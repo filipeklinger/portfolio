@@ -1,42 +1,54 @@
+
 import React from 'react';
+import {
+  Database,
+  Server,
+  Code,
+  Globe,
+  FileCode,
+  Layers,
+  Zap,
+  Cpu,
+  SquareStack,
+} from 'lucide-react';
 
 const techGroups = [
-    {
-        group: 'Bancos de Dados',
-        items: [
-            { name: 'MySQL/MariaDB' },
-            { name: 'PostgreSQL' },
-            { name: 'MongoDB' },
-            { name: 'Redis' },
-        ],
-    },
-    {
-        group: 'Backend',
-        items: [
-            { name: 'C# .NET' },
-            { name: 'Node.js' },
-            { name: 'PHP' },
-        ],
-    },
-    {
-        group: 'Frontend',
-        items: [
-            { name: 'React' },
-            { name: 'Angular' },
-            { name: 'Html + Js' },
-        ],
-    },
-    {
-        group: 'Cloud & DevOps',
-        items: [
-            { name: 'AWS SQS' },
-            { name: 'AWS Lambda' },
-            { name: 'AWS EC2' },
-            { name: 'AWS S3' },
-            { name: 'Docker' },
-            { name: 'Azure DevOps' },
-        ],
-    },
+  {
+    group: 'Bancos de Dados',
+    items: [
+      { name: 'MySQL/MariaDB', icon: Database },
+      { name: 'PostgreSQL', icon: Database },
+      { name: 'MongoDB', icon: Database },
+      { name: 'Redis', icon: Database },
+    ],
+  },
+  {
+    group: 'Backend',
+    items: [
+      { name: 'C# .NET', icon: Server },
+      { name: 'Node.js', icon: Code },
+      { name: 'PHP', icon: FileCode },
+    ],
+  },
+  {
+    group: 'Frontend',
+    items: [
+      { name: 'React', icon: Globe },
+      { name: 'Angular', icon: Globe },
+      { name: 'Html + Js', icon: Code },
+    ],
+  },
+  {
+    group: 'Cloud & DevOps',
+    items: [
+      { name: 'AWS SQS', icon: Layers },
+      { name: 'AWS Lambda', icon: Zap },
+      { name: 'AWS EC2', icon: Cpu },
+      { name: 'AWS S3', icon: SquareStack },
+      { name: 'Docker', icon: SquareStack },
+      { name: 'Azure DevOps', icon: Layers },
+    ],
+  },
 ];
 
 const TechStack: React.FC = () => (
@@ -47,11 +59,15 @@ const TechStack: React.FC = () => (
         <div key={group.group}>
           <h3 className="text-lg font-semibold mb-4 text-white">{group.group}</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {group.items.map((item) => (
-              <div key={item.name} className="flex items-center justify-center px-4 py-3 rounded bg-white/20 backdrop-blur-md shadow text-white font-medium">
-                {item.name}
-              </div>
-            ))}
+            {group.items.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.name} className="flex items-center justify-center gap-2 px-4 py-3 rounded bg-white/20 backdrop-blur-md shadow text-white font-medium">
+                  {Icon && <Icon className="w-5 h-5 text-blue-200" />}
+                  {item.name}
+                </div>
+              );
+            })}
           </div>
         </div>
       ))}
