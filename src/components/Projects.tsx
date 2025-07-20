@@ -69,12 +69,12 @@ const Projects: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((t) => (
-                <span key={t} className="text-xs bg-white/20 rounded px-2 py-1 text-white/90">{t}</span>
+                <span key={t} className="text-xs bg-gray-800/40 rounded px-2 py-1 text-white">{t}</span>
               ))}
             </div>
             <button
               onClick={() => handleOpenModal(project)}
-              className="text-blue-300 hover:underline mt-auto text-left"
+              className="text-white hover:underline mt-auto text-left"
             >
               Ver mais
             </button>
@@ -98,7 +98,7 @@ const Projects: React.FC = () => {
             <p className="mb-2">{selectedProject.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {selectedProject.tech.map((t) => (
-                <span key={t} className="text-xs bg-gray-200 rounded px-2 py-1 text-gray-800">{t}</span>
+                <span key={t} className="text-xs bg-gray-800 rounded px-2 py-1 text-white">{t}</span>
               ))}
             </div>
             {selectedProject.systemLink ? (
