@@ -46,7 +46,7 @@ const TechStack: React.FC = () => (
       {techGroups.map((group) => (
         <div key={group.group}>
           <h3 className="text-lg font-semibold mb-4 text-white">{group.group}</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {group.items.map((item) => (
               <div key={item.name} className="flex items-center justify-center px-4 py-3 rounded bg-white/20 backdrop-blur-md shadow text-white font-medium">
                 {item.name}
