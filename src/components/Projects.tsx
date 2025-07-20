@@ -41,7 +41,11 @@ const Projects: React.FC = () => {
           <div key={idx} className="border border-white/30 rounded-lg p-6 bg-white/20 backdrop-blur-md shadow-sm flex flex-col">
             <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded mb-4" />
             <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
-            <p className="text-white/80 mb-2">{project.description}</p>
+            <p className="text-white/80 mb-2">
+              {project.description.length > 200
+                ? project.description.slice(0, 200) + '...'
+                : project.description}
+            </p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((t) => (
                 <span key={t} className="text-xs bg-white/20 rounded px-2 py-1 text-white/90">{t}</span>
