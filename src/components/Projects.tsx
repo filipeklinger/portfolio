@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
       {/* Modal */}
       {modalOpen && selectedProject && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-[80vw] max-w-3xl relative text-black">
+          <div className="bg-white rounded-lg p-6 w-[80vw] max-w-3xl relative text-black max-h-[90vh] overflow-y-auto">
             <button
               onClick={handleCloseModal}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl"
