@@ -2,6 +2,25 @@ import { useEffect } from 'react';
 import './App.css';
 
 function App() {
+  // Função para calcular anos de experiência desde 2019
+  const calculateYearsOfExperience = () => {
+    const startDate = new Date(2019, 0, 1); // 1 de janeiro de 2021
+    const currentDate = new Date();
+    
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    
+    // Verifica se ainda não chegou ao aniversário do início da experiência neste ano
+    const hasPassedAnniversary = 
+      currentDate.getMonth() > startDate.getMonth() || 
+      (currentDate.getMonth() === startDate.getMonth() && currentDate.getDate() >= startDate.getDate());
+    
+    if (!hasPassedAnniversary) {
+      years--;
+    }
+    
+    return years;
+  };
+
   useEffect(() => {
     // Matrix Rain Effect
     const createMatrixRain = () => {
@@ -308,11 +327,11 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">50+</div>
+                  <div className="text-3xl font-bold text-blue-400">10+</div>
                   <div className="text-slate-300">Projetos Entregues</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">8+</div>
+                  <div className="text-3xl font-bold text-blue-400">{calculateYearsOfExperience()}+</div>
                   <div className="text-slate-300">Anos de Experiência</div>
                 </div>
               </div>
