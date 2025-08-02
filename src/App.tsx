@@ -178,7 +178,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div className="circuit-bg absolute inset-0"></div>
         
         {/* Tech Background Effects */}
