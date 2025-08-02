@@ -533,35 +533,35 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             <div className="slide-in">
               <h3 className="text-2xl font-bold mb-6">Entre em Contato</h3>
               <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center">
+                <a href="mailto:filipeklinger@gmail.com" className="flex items-center space-x-4 hover:bg-slate-700/50 p-3 rounded-lg transition-colors group">
+                  <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-blue-500 transition-colors">
                     <i className="fas fa-envelope text-white"></i>
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-slate-300">filipeklinger@gmail.com</div>
+                    <div className="text-slate-300 group-hover:text-blue-400 transition-colors">filipeklinger@gmail.com</div>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center">
+                <a href="https://linkedin.com/in/filipeklinger" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:bg-slate-700/50 p-3 rounded-lg transition-colors group">
+                  <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-blue-500 transition-colors">
                     <i className="fab fa-linkedin text-white"></i>
                   </div>
                   <div>
                     <div className="font-semibold">LinkedIn</div>
-                    <div className="text-slate-300">linkedin.com/in/filipeklinger</div>
+                    <div className="text-slate-300 group-hover:text-blue-400 transition-colors">linkedin.com/in/filipeklinger</div>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center">
+                <a href="https://github.com/filipeklinger" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:bg-slate-700/50 p-3 rounded-lg transition-colors group">
+                  <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-blue-500 transition-colors">
                     <i className="fab fa-github text-white"></i>
                   </div>
                   <div>
                     <div className="font-semibold">GitHub</div>
-                    <div className="text-slate-300">github.com/filipeklinger</div>
+                    <div className="text-slate-300 group-hover:text-blue-400 transition-colors">github.com/filipeklinger</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             
@@ -780,7 +780,6 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                   <li>Acompanhamento de progresso dos colaboradores</li>
                   <li>Relatórios detalhados de desempenho</li>
                   <li>Interface responsiva e intuitiva</li>
-                  <li>Integração com sistemas internos do BTG</li>
                 </ul>
                 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
