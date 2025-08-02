@@ -604,8 +604,8 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               <i className="fas fa-times"></i>
             </button>
             
-            <div className="project-image rounded-t-2xl">
-              <i className="fas fa-landmark"></i>
+            <div className="relative rounded-t-2xl overflow-hidden">
+              <img src="/img/arbi.webp" alt="Arbi Landing Page" className="w-full h-64 object-cover" />
             </div>
             
             <div className="p-8">
@@ -675,8 +675,8 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               <i className="fas fa-times"></i>
             </button>
             
-            <div className="project-image rounded-t-2xl" style={{background: 'linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%)'}}>
-              <i className="fas fa-shopping-cart"></i>
+            <div className="relative rounded-t-2xl overflow-hidden">
+              <img src="/img/timlive.webp" alt="Tim Live Carrinho de Compras" className="w-full h-64 object-cover" />
             </div>
             
             <div className="p-8">
@@ -746,8 +746,8 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               <i className="fas fa-times"></i>
             </button>
             
-            <div className="project-image rounded-t-2xl" style={{background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)'}}>
-              <i className="fas fa-graduation-cap"></i>
+            <div className="relative rounded-t-2xl overflow-hidden">
+              <img src="/img/btgcampus.webp" alt="BTG Campus Plataforma de Cursos" className="w-full h-64 object-cover" />
             </div>
             
             <div className="p-8">
@@ -816,8 +816,8 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               <i className="fas fa-times"></i>
             </button>
             
-            <div className="project-image rounded-t-2xl" style={{background: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)'}}>
-              <i className="fas fa-users"></i>
+            <div className="relative rounded-t-2xl overflow-hidden">
+              <img src="/img/anfope.webp" alt="Anfope Sistema de Gestão" className="w-full h-64 object-cover" />
             </div>
             
             <div className="p-8">
