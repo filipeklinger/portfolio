@@ -553,12 +553,6 @@ function App() {
                   </button>
                 </form>
                 
-                <div className="mt-6 p-4 bg-blue-900/30 border border-blue-700 rounded-lg">
-                  <div className="flex items-center text-blue-300 text-sm">
-                    <i className="fas fa-info-circle mr-2"></i>
-                    <span>Demo - Formulário não funcional</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
