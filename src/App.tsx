@@ -503,7 +503,7 @@ function App() {
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-slate-300">filipe.klinger@email.com</div>
+                    <div className="text-slate-300">filipeklinger@gmail.com</div>
                   </div>
                 </div>
                 
