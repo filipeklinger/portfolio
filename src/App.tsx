@@ -101,19 +101,55 @@ function App() {
       event.preventDefault();
       
       const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
       const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
       const originalText = button.innerHTML;
       
-      button.innerHTML = '<i class="fas fa-check mr-2"></i>Mensagem Enviada!';
+      // Coleta os dados do formulário
+      const nome = formData.get('nome') as string;
+      const email = formData.get('email') as string;
+      const mensagem = formData.get('mensagem') as string;
+      
+      // Monta a mensagem formatada para WhatsApp
+      const whatsappMessage = `🚀 *Nova mensagem do portfólio!*
+
+👤 *Nome:* ${nome}
+📧 *Email:* ${email}
+
+💬 *Mensagem:*
+${mensagem}
+
+---
+_Mensagem enviada através do portfólio de Filipe Klinger_`;
+      
+      // Número do WhatsApp (formato internacional sem símbolos)
+      const phoneNumber = '5521972935253';
+      
+      // Codifica a mensagem para URL
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      
+      // Monta a URL do WhatsApp Web
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      // Atualiza o botão para mostrar que está enviando
+      button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Abrindo WhatsApp...';
       button.classList.add('bg-green-600', 'hover:bg-green-700');
       button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
       
+      // Abre o WhatsApp Web em uma nova aba
       setTimeout(() => {
-        button.innerHTML = originalText;
-        button.classList.remove('bg-green-600', 'hover:bg-green-700');
-        button.classList.add('bg-blue-600', 'hover:bg-blue-700');
-        form.reset();
-      }, 3000);
+        window.open(whatsappURL, '_blank');
+        
+        // Atualiza o botão para mostrar sucesso
+        button.innerHTML = '<i class="fas fa-check mr-2"></i>WhatsApp Aberto!';
+        
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.classList.remove('bg-green-600', 'hover:bg-green-700');
+          button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+          form.reset();
+        }, 3000);
+      }, 1000);
     };
 
     // Modal event listeners
@@ -534,22 +570,22 @@ function App() {
                 <form className="space-y-6" onSubmit={(window as any).handleSubmit}>
                   <div>
                     <label className="block text-sm font-semibold mb-2">Nome</label>
-                    <input type="text" required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors" />
+                    <input type="text" name="nome" required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors" />
                   </div>
                   
                   <div>
                     <label className="block text-sm font-semibold mb-2">Email</label>
-                    <input type="email" required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors" />
+                    <input type="email" name="email" required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors" />
                   </div>
                   
                   <div>
                     <label className="block text-sm font-semibold mb-2">Mensagem</label>
-                    <textarea rows={4} required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors resize-none"></textarea>
+                    <textarea name="mensagem" rows={4} required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors resize-none"></textarea>
                   </div>
                   
                   <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
-                    <i className="fas fa-paper-plane mr-2"></i>
-                    Enviar Mensagem
+                    <i className="fab fa-whatsapp mr-2"></i>
+                    Enviar via WhatsApp
                   </button>
                 </form>
                 
