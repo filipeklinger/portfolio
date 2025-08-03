@@ -320,22 +320,26 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             </div>
             
             <div className="slide-in">
-              <h3 className="text-2xl font-bold mb-6 text-slate-100">Desenvolvedor Full Stack</h3>
-              <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-                Especialista em sistemas web com experiência sólida em backend, frontend, integrações e cloud. Sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100">Desenvolvedor Full Stack</h3>
+              <p className="sm:text-lg text-slate-300 mb-6 leading-relaxed break-words px-4">
+                Especialista em sistemas web com experiência sólida em backend, frontend, 
+                integrações e cloud. Sempre buscando aprender novas tecnologias e 
+                aprimorar minhas habilidades.
               </p>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                Apaixonado por criar soluções eficientes e que entregam valor. Acredito que a melhor tecnologia é aquela que resolve problemas reais de forma elegante, transformando complexidade em simplicidade.
+              <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-4">
+                Apaixonado por criar soluções eficientes e que entregam valor. 
+                Acredito que a melhor tecnologia é aquela que resolve problemas reais 
+                de forma elegante, transformando complexidade em simplicidade.
               </p>
               
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">10+</div>
-                  <div className="text-slate-300">Projetos Entregues</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">10+</div>
+                  <div className="text-sm sm:text-base text-slate-300">Projetos Entregues</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">{calculateYearsOfExperience()}+</div>
-                  <div className="text-slate-300">Anos de Experiência</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">{calculateYearsOfExperience()}+</div>
+                  <div className="text-sm sm:text-base text-slate-300">Anos de Experiência</div>
                 </div>
               </div>
             </div>
