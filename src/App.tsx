@@ -116,6 +116,8 @@ function App() {
       }
     };
 
+    // COMENTADO TEMPORARIAMENTE - Formulário de contato não funcional
+    /*
     (window as any).handleSubmit = (event: Event) => {
       event.preventDefault();
       
@@ -170,6 +172,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
         }, 3000);
       }, 1000);
     };
+    */
 
     // Modal event listeners
     const handleModalClick = (event: MouseEvent) => {
@@ -200,12 +203,12 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
   }, []);
 
   return (
-    <div className="bg-slate-900 text-slate-100">
+    <div className="bg-slate-900 text-slate-100 overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-slate-800/90 backdrop-blur-md z-50 border-b border-slate-700">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-xl font-bold text-slate-100">
+            <div className="text-lg sm:text-xl font-bold text-slate-100 truncate">
               <span className="text-blue-400">&lt;</span>Filipe Klinger<span className="text-blue-400">/&gt;</span>
             </div>
             <div className="hidden md:flex space-x-8">
@@ -215,18 +218,18 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               <a href="#skills" className="nav-link text-slate-300 hover:text-blue-400">Habilidades</a>
               <a href="#contact" className="nav-link text-slate-300 hover:text-blue-400">Contato</a>
             </div>
-            <button className="md:hidden text-slate-300" onClick={() => (window as any).toggleMobileMenu()}>
-              <i className="fas fa-bars text-xl"></i>
+            <button className="md:hidden text-slate-300 flex-shrink-0 p-2" onClick={() => (window as any).toggleMobileMenu()}>
+              <i className="fas fa-bars text-lg"></i>
             </button>
           </div>
           {/* Mobile Menu */}
-          <div id="mobileMenu" className="hidden md:hidden mt-4 pb-4">
+          <div id="mobileMenu" className="hidden md:hidden mt-4 pb-4 overflow-hidden">
             <div className="flex flex-col space-y-3">
-              <a href="#home" className="text-slate-300 hover:text-blue-400" onClick={() => (window as any).toggleMobileMenu()}>Início</a>
-              <a href="#about" className="text-slate-300 hover:text-blue-400" onClick={() => (window as any).toggleMobileMenu()}>Sobre</a>
-              <a href="#projects" className="text-slate-300 hover:text-blue-400" onClick={() => (window as any).toggleMobileMenu()}>Projetos</a>
-              <a href="#skills" className="text-slate-300 hover:text-blue-400" onClick={() => (window as any).toggleMobileMenu()}>Habilidades</a>
-              <a href="#contact" className="text-slate-300 hover:text-blue-400" onClick={() => (window as any).toggleMobileMenu()}>Contato</a>
+              <a href="#home" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Início</a>
+              <a href="#about" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Sobre</a>
+              <a href="#projects" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Projetos</a>
+              <a href="#skills" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Habilidades</a>
+              <a href="#contact" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Contato</a>
             </div>
           </div>
         </div>
@@ -252,25 +255,25 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
           <div className="matrix-rain" id="matrixRain"></div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="slide-in">
             <div className="floating mb-8">
-              <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
-                <img src="eu.jpeg" alt="Filipe Klinger" className="rounded-full w-32 h-32 object-cover" />
+              <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
+                <img src="eu.jpeg" alt="Filipe Klinger" className="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="text-slate-100">Desenvolvedor &</span><br />
               <span className="text-blue-400">Arquiteto de Software</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               Transformando ideias complexas em soluções elegantes e escaláveis
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#projects" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+              <a href="#projects" className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-center">
                 Ver Projetos
               </a>
-              <a href="#contact" className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-slate-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+              <a href="#contact" className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 text-center">
                 Entre em Contato
               </a>
             </div>
@@ -283,9 +286,9 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
 
       {/* About Section */}
       <section id="about" className="py-20 bg-slate-800">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="slide-in text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
               <span className="text-blue-400">&lt;</span>Sobre Mim<span className="text-blue-400">/&gt;</span>
             </h2>
             <div className="code-lines w-24 mx-auto mb-8"></div>
@@ -342,18 +345,18 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-slate-900">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="slide-in text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
               <span className="text-blue-400">&lt;</span>Projetos<span className="text-blue-400">/&gt;</span>
             </h2>
             <div className="code-lines w-24 mx-auto mb-8"></div>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
               Soluções inovadoras que demonstram expertise técnica e visão estratégica
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Project 1 */}
             <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
               <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -432,15 +435,15 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
 
       {/* Skills Section */}
       <section id="skills" className="py-20 bg-slate-800">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="slide-in text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
               <span className="text-blue-400">&lt;</span>Habilidades<span className="text-blue-400">/&gt;</span>
             </h2>
             <div className="code-lines w-24 mx-auto mb-8"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16">
             {/* Frontend */}
             <div className="slide-in text-center">
               <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -537,18 +540,18 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-slate-900 text-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="slide-in text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               <span className="text-blue-400">&lt;</span>Vamos Conversar<span className="text-blue-400">/&gt;</span>
             </h2>
             <div className="code-lines w-24 mx-auto mb-8 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
               Pronto para transformar sua ideia em realidade? Entre em contato e vamos construir algo incrível juntos.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div className="slide-in">
               <h3 className="text-2xl font-bold mb-6">Entre em Contato</h3>
               <div className="space-y-6">
@@ -581,11 +584,40 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                     <div className="text-slate-300 group-hover:text-blue-400 transition-colors">github.com/filipeklinger</div>
                   </div>
                 </a>
+
+                <a href="https://wa.me/5521972935253?text=Olá%20Filipe!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:bg-slate-700/50 p-3 rounded-lg transition-colors group">
+                  <div className="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-green-500 transition-colors">
+                    <i className="fab fa-whatsapp text-white"></i>
+                  </div>
+                  <div>
+                    <div className="font-semibold">WhatsApp</div>
+                    <div className="text-slate-300 group-hover:text-green-400 transition-colors">(21) 97293-5253</div>
+                  </div>
+                </a>
               </div>
             </div>
             
             <div className="slide-in">
               <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                <div className="text-center space-y-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-4 text-white">Entre em contato pelo WhatsApp</h3>
+                    <a 
+                      href="https://wa.me/5521972935253?text=Olá%20Filipe!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                    >
+                      <i className="fab fa-whatsapp mr-3 text-xl"></i>
+                      Conversar no WhatsApp
+                    </a>
+                    <p className="text-slate-400 text-sm mt-3">
+                      Clique no botão acima para abrir uma conversa comigo no WhatsApp
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Formulário comentado para reativação futura
                 <form className="space-y-6" onSubmit={(window as any).handleSubmit}>
                   <div>
                     <label className="block text-sm font-semibold mb-2">Nome</label>
@@ -607,6 +639,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                     Enviar via WhatsApp
                   </button>
                 </form>
+                */}
                 
               </div>
             </div>
@@ -900,11 +933,11 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <div className="mb-4">
             <span className="text-blue-400">&lt;</span>Filipe Klinger<span className="text-blue-400">/&gt;</span>
           </div>
-          <p>&copy; 2024 Filipe Klinger. Desenvolvido com paixão e tecnologia.</p>
+          <p className="text-sm sm:text-base">&copy; 2024 Filipe Klinger. Desenvolvido com paixão e tecnologia.</p>
         </div>
       </footer>
     </div>
