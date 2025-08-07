@@ -22,7 +22,7 @@ function getClosestPath(input: string, options: string[]): string | null {
   //   2: aceita até 2 erros (recomendado para português, pois nomes de opções são longos)
   //   3+: aceita ainda mais erros, mas pode causar falsos positivos
   // Ajuste conforme o comportamento desejado:
-  const threshold = 2;
+  const threshold = 10;
   if (minDistance <= threshold) return closest;
   return null;
 }
@@ -118,7 +118,7 @@ const flow = {
     path: () => "start",
   },
   contactInfo: {
-    message: "Você pode entrar em contato pelo e-mail: seuemail@exemplo.com",
+    message: "Você pode entrar em contato pelo e-mail: filipeklinger@gmail.com",
     options: ["Voltar ao início"],
     path: () => "start",
   },
