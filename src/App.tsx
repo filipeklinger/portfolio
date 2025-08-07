@@ -604,10 +604,8 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             
             <div className="slide-in">
               <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                <div className="text-center space-y-6">
-                 
-                   <Chatbot />
-                 
+                <div className="flex justify-center items-center min-h-[400px] w-full">
+                  <Chatbot />
                 </div>
               </div>
             </div>

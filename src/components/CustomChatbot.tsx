@@ -109,7 +109,7 @@ const flow = {
     },
   },
   pagamento: {
-    message: "Aceito pagamentos via Pix, transferência bancária e, para empresas, emissão de nota fiscal.",
+    message: "Aceito pagamentos via Pix, transferência bancária, podemos negociar outras forma de pagamento dependendo do escopo do projeto.",
     options: ["Voltar ao início", "Como são feitas as reuniões?"],
     path: (params: any) => {
       const input = params.userInput || "";
