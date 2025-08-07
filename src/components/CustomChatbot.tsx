@@ -1,6 +1,57 @@
 import Chatbot from "react-chatbotify";
 // import "react-chatbotify/dist/main.css";
 
+// Função simples de similaridade baseada em Levenshtein Distance
+function getClosestPath(input: string, options: string[]): string | null {
+  input = input.trim().toLowerCase();
+  let minDistance = Infinity;
+  let closest = null;
+  for (const option of options) {
+    const distance = levenshtein(input, option.toLowerCase());
+    if (distance < minDistance) {
+      minDistance = distance;
+      closest = option;
+    }
+  }
+  // O threshold abaixo define o quanto de erro de digitação é aceito.
+  // Quanto MENOR o valor, mais rigoroso: só aceita respostas quase idênticas.
+  // Quanto MAIOR o valor, mais permissivo: aceita respostas com mais erros.
+  // Exemplos:
+  //   0: só aceita igual (case-insensitive)
+  //   1: aceita 1 letra errada, faltando ou trocada
+  //   2: aceita até 2 erros (recomendado para português, pois nomes de opções são longos)
+  //   3+: aceita ainda mais erros, mas pode causar falsos positivos
+  // Ajuste conforme o comportamento desejado:
+  const threshold = 2;
+  if (minDistance <= threshold) return closest;
+  return null;
+}
+
+// Levenshtein Distance
+function levenshtein(a: string, b: string): number {
+  const matrix = [];
+  for (let i = 0; i <= b.length; i++) {
+    matrix[i] = [i];
+  }
+  for (let j = 0; j <= a.length; j++) {
+    matrix[0][j] = j;
+  }
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) === a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1, // substitution
+          matrix[i][j - 1] + 1,     // insertion
+          matrix[i - 1][j] + 1      // deletion
+        );
+      }
+    }
+  }
+  return matrix[b.length][a.length];
+}
+
 const flow = {
   start: {
     message: "Olá! Como posso ajudar você hoje?",
@@ -19,22 +70,45 @@ const flow = {
       "Posso ver outros trabalhos seus?",
       "Qual seu diferencial?",
     ],
-    path: (params: any) => {
+    path: async (params: any) => {
       const input = params.userInput || "";
-      const normalized = input.trim().toLowerCase();
-      if (normalized === "quero saber mais sobre o portfólio") return "portfolioInfo";
-      if (normalized === "entrar em contato") return "contactInfo";
-      if (normalized === "quais tecnologias você usa?") return "tecnologias";
-      if (normalized === "como funciona o processo de desenvolvimento?") return "processo";
-      if (normalized === "qual o prazo médio para um projeto?") return "prazo";
-      if (normalized === "como é feito o orçamento?") return "orcamento";
-      if (normalized === "você trabalha sozinho ou em equipe?") return "equipe";
-      if (normalized === "quais tipos de projeto você já fez?") return "tiposProjetos";
-      if (normalized === "você oferece manutenção ou suporte?") return "suporte";
-      if (normalized === "quais as formas de pagamento?") return "pagamento";
-      if (normalized === "como são feitas as reuniões?") return "reunioes";
-      if (normalized === "posso ver outros trabalhos seus?") return "portfolioOnline";
-      if (normalized === "qual seu diferencial?") return "diferencial";
+      const options = [
+        "Quero saber mais sobre o portfólio",
+        "Entrar em contato",
+        "Quais tecnologias você usa?",
+        "Como funciona o processo de desenvolvimento?",
+        "Qual o prazo médio para um projeto?",
+        "Como é feito o orçamento?",
+        "Você trabalha sozinho ou em equipe?",
+        "Quais tipos de projeto você já fez?",
+        "Você oferece manutenção ou suporte?",
+        "Quais as formas de pagamento?",
+        "Como são feitas as reuniões?",
+        "Posso ver outros trabalhos seus?",
+        "Qual seu diferencial?",
+      ];
+      const pathMap: Record<string, string> = {
+        "quero saber mais sobre o portfólio": "portfolioInfo",
+        "entrar em contato": "contactInfo",
+        "quais tecnologias você usa?": "tecnologias",
+        "como funciona o processo de desenvolvimento?": "processo",
+        "qual o prazo médio para um projeto?": "prazo",
+        "como é feito o orçamento?": "orcamento",
+        "você trabalha sozinho ou em equipe?": "equipe",
+        "quais tipos de projeto você já fez?": "tiposProjetos",
+        "você oferece manutenção ou suporte?": "suporte",
+        "quais as formas de pagamento?": "pagamento",
+        "como são feitas as reuniões?": "reunioes",
+        "posso ver outros trabalhos seus?": "portfolioOnline",
+        "qual seu diferencial?": "diferencial",
+      };
+      const closest = getClosestPath(input, options);
+      if (closest) {
+        return pathMap[closest.toLowerCase()];
+      }
+      if (input.length > 0) {
+        await params.injectMessage("Desculpe, não entendi sua pergunta. Por favor, escolha uma das opções ou reformule sua dúvida.");
+      }
       return "start";
     },
   },
