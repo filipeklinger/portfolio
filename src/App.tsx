@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import Chatbot from './components/CustomChatbot';
 
 function App() {
   // Função para calcular anos de experiência desde 2019
@@ -604,47 +605,10 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             <div className="slide-in">
               <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
                 <div className="text-center space-y-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-4 text-white">Entre em contato pelo WhatsApp</h3>
-                    <a 
-                      href="https://wa.me/5521972935253?text=Olá%20Filipe!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="inline-flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-                    >
-                      <i className="fab fa-whatsapp mr-3 text-xl"></i>
-                      Conversar no WhatsApp
-                    </a>
-                    <p className="text-slate-400 text-sm mt-3">
-                      Clique no botão acima para abrir uma conversa comigo no WhatsApp
-                    </p>
-                  </div>
+                 
+                   <Chatbot />
+                 
                 </div>
-                
-                {/* Formulário comentado para reativação futura
-                <form className="space-y-6" onSubmit={(window as any).handleSubmit}>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Nome</label>
-                    <input type="text" name="nome" required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors" />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Email</label>
-                    <input type="email" name="email" required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors" />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Mensagem</label>
-                    <textarea name="mensagem" rows={4} required className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors resize-none"></textarea>
-                  </div>
-                  
-                  <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
-                    <i className="fab fa-whatsapp mr-2"></i>
-                    Enviar via WhatsApp
-                  </button>
-                </form>
-                */}
-                
               </div>
             </div>
           </div>
