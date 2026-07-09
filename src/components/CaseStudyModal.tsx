@@ -51,59 +51,55 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
 
   const { title, subtitle, technologies, role, type, status, overview, context, challenge, myRole, solution, features, techCategories, gallery } = project;
 
-  return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl bg-slate-900 shadow-2xl border border-slate-700">
-        {/* Close Button */}
-        <button 
-          onClick={onClose} 
-          className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 w-10 h-10 rounded-full flex items-center justify-center transition-all"
-        >
-          <i className="fas fa-times"></i>
-        </button>
-
+   return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/50 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full max-w-5xl mx-auto my-8 rounded-2xl bg-white shadow-xl border border-slate-300 animate-slideUp max-h-[90vh] flex flex-col overflow-hidden">
         {/* Hero Section */}
-        <div className="relative">
+        <div className="relative rounded-t-2xl overflow-hidden">
           <img 
             src="/img/anfope.webp" 
             alt={title} 
-            className="w-full h-64 object-cover rounded-t-2xl"
+            className="w-full h-64 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+        </div>
+        
+        {/* Content with centered title like modal1 */}
+        <div className="px-8 -mt-8 relative z-10">
+          <div className="flex items-center mb-4 bg-white p-3 rounded-xl shadow-lg border border-slate-200">
+            <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <i className="fas fa-user text-white text-xl"></i>
+            </div>
+            <h2 className="text-3xl font-bold text-slate-800">{title}</h2>
+          </div>
           
-          <div className="absolute bottom-0 left-0 right-0 p-8">
-            <h2 className="text-4xl font-bold text-white mb-2">{title}</h2>
-            <p className="text-xl text-slate-300 mb-4">{subtitle}</p>
-            
-            <div className="flex flex-wrap gap-3">
-              {technologies.map((tech, index) => (
-                <span key={index} className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            
-            <div className="flex items-center gap-4 mt-4 text-sm text-slate-300">
-              <span className="flex items-center gap-2">
-                <i className="fas fa-user-tag"></i> {role}
+          <div className="flex items-center gap-4 mt-4 mb-6">
+            {technologies.map((tech, index) => (
+              <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                {tech}
               </span>
-              <span className="flex items-center gap-2">
-                <i className="fas fa-folder-open"></i> {type}
-              </span>
-              <span className="flex items-center gap-2">
-                <i className="fas fa-check-circle"></i> {status}
-              </span>
-            </div>
+            ))}
+          </div>
+          
+          <div className="flex items-center gap-4 mt-2 mb-6 text-sm text-slate-600">
+            <span className="flex items-center gap-2">
+              <i className="fas fa-user-tag"></i> {role}
+            </span>
+            <span className="flex items-center gap-2">
+              <i className="fas fa-folder-open"></i> {type}
+            </span>
+            <span className="flex items-center gap-2">
+              <i className="fas fa-check-circle"></i> {status}
+            </span>
           </div>
         </div>
 
-        {/* Content */}
-        <div className="p-8 space-y-8">
+        {/* Content - scrollable area */}
+        <div className="p-8 space-y-8 overflow-y-auto flex-1">
           
           {/* Overview */}
           <section>
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">Visão Geral</h3>
-            <div className="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+            <h3 className="text-2xl font-bold text-blue-600 mb-4">Visão Geral</h3>
+            <div className="prose max-w-none text-slate-700 leading-relaxed">
               {overview.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
               ))}
@@ -112,8 +108,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
 
           {/* Context */}
           <section>
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">Contexto</h3>
-            <div className="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+            <h3 className="text-2xl font-bold text-blue-600 mb-4">Contexto</h3>
+            <div className="prose max-w-none text-slate-700 leading-relaxed">
               {context.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
               ))}
@@ -122,8 +118,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
 
           {/* Challenge */}
           <section>
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">O Desafio</h3>
-            <div className="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+            <h3 className="text-2xl font-bold text-blue-600 mb-4">O Desafio</h3>
+            <div className="prose max-w-none text-slate-700 leading-relaxed">
               {challenge.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
               ))}
@@ -132,12 +128,12 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
 
           {/* My Role */}
           <section>
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">Minha Atuação</h3>
+            <h3 className="text-2xl font-bold text-blue-600 mb-4">Minha Atuação</h3>
             <div className="grid md:grid-cols-2 gap-3">
               {myRole.map((item, index) => (
-                <div key={index} className="flex items-center bg-slate-800 p-3 rounded-lg border border-slate-700">
+                <div key={index} className="flex items-center bg-slate-50 p-3 rounded-lg border border-slate-200">
                   <div className="w-5 h-5 bg-green-500 rounded-full mr-3 flex-shrink-0"></div>
-                  <span className="text-slate-200">{item}</span>
+                  <span className="text-slate-700">{item}</span>
                 </div>
               ))}
             </div>
@@ -145,8 +141,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
 
           {/* Solution */}
           <section>
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">Solução</h3>
-            <div className="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+            <h3 className="text-2xl font-bold text-blue-600 mb-4">Solução</h3>
+            <div className="prose max-w-none text-slate-700 leading-relaxed">
               {solution.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
               ))}
@@ -156,10 +152,10 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           {/* Features */}
           {features.length > 0 && (
             <section>
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">Principais Funcionalidades</h3>
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Principais Funcionalidades</h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex items-start text-slate-300">
+                  <li key={index} className="flex items-start text-slate-700">
                     <i className="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
                     <span>{feature}</span>
                   </li>
@@ -171,16 +167,16 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           {/* Technologies */}
           {Object.keys(techCategories).length > 0 && (
             <section>
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">Tecnologias</h3>
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Tecnologias</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {techCategories.backend && techCategories.backend.length > 0 && (
-                  <div className="bg-slate-800 p-5 rounded-xl border border-slate-700">
-                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                      <i className="fas fa-server text-purple-400"></i> Backend
+                  <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2 text-slate-800">
+                      <i className="fas fa-server text-purple-600"></i> Backend
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {techCategories.backend.map((tech, index) => (
-                        <span key={index} className="bg-slate-700 px-3 py-1 rounded-full text-sm text-slate-200">
+                        <span key={index} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200 shadow-sm">
                           {tech}
                         </span>
                       ))}
@@ -189,13 +185,13 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
                 )}
                 
                 {techCategories.frontend && techCategories.frontend.length > 0 && (
-                  <div className="bg-slate-800 p-5 rounded-xl border border-slate-700">
-                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                      <i className="fas fa-laptop-code text-blue-400"></i> Frontend
+                  <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2 text-slate-800">
+                      <i className="fas fa-laptop-code text-blue-600"></i> Frontend
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {techCategories.frontend.map((tech, index) => (
-                        <span key={index} className="bg-slate-700 px-3 py-1 rounded-full text-sm text-slate-200">
+                        <span key={index} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200 shadow-sm">
                           {tech}
                         </span>
                       ))}
@@ -204,13 +200,13 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
                 )}
                 
                 {techCategories.database && techCategories.database.length > 0 && (
-                  <div className="bg-slate-800 p-5 rounded-xl border border-slate-700">
-                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                      <i className="fas fa-database text-yellow-400"></i> Banco de Dados
+                  <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2 text-slate-800">
+                      <i className="fas fa-database text-yellow-600"></i> Banco de Dados
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {techCategories.database.map((tech, index) => (
-                        <span key={index} className="bg-slate-700 px-3 py-1 rounded-full text-sm text-slate-200">
+                        <span key={index} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200 shadow-sm">
                           {tech}
                         </span>
                       ))}
@@ -219,13 +215,13 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
                 )}
                 
                 {techCategories.cloud && techCategories.cloud.length > 0 && (
-                  <div className="bg-slate-800 p-5 rounded-xl border border-slate-700">
-                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                      <i className="fas fa-cloud text-orange-400"></i> Cloud
+                  <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2 text-slate-800">
+                      <i className="fas fa-cloud text-orange-600"></i> Cloud
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {techCategories.cloud.map((tech, index) => (
-                        <span key={index} className="bg-slate-700 px-3 py-1 rounded-full text-sm text-slate-200">
+                        <span key={index} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200 shadow-sm">
                           {tech}
                         </span>
                       ))}
@@ -234,13 +230,13 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
                 )}
                 
                 {techCategories.infrastructure && techCategories.infrastructure.length > 0 && (
-                  <div className="bg-slate-800 p-5 rounded-xl border border-slate-700">
-                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                      <i className="fas fa-cogs text-teal-400"></i> Infraestrutura
+                  <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 className="font-semibold text-lg mb-3 flex items-center gap-2 text-slate-800">
+                      <i className="fas fa-cogs text-teal-600"></i> Infraestrutura
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {techCategories.infrastructure.map((tech, index) => (
-                        <span key={index} className="bg-slate-700 px-3 py-1 rounded-full text-sm text-slate-200">
+                        <span key={index} className="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200 shadow-sm">
                           {tech}
                         </span>
                       ))}
@@ -254,16 +250,16 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           {/* Gallery */}
           {gallery && gallery.length > 0 && (
             <section>
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">Galeria</h3>
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Galeria</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {gallery.map((item, index) => (
-                  <div key={index} className="rounded-lg overflow-hidden border border-slate-700">
+                  <div key={index} className="rounded-lg overflow-hidden border border-slate-200 shadow-sm">
                     <img 
                       src={item.image} 
                       alt={item.caption} 
                       className="w-full h-48 object-cover"
                     />
-                    <div className="p-3 bg-slate-800 text-center text-sm text-slate-300">
+                    <div className="p-3 bg-slate-50 text-center text-sm text-slate-700 border-t border-slate-200">
                       {item.caption}
                     </div>
                   </div>
@@ -271,18 +267,27 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
               </div>
             </section>
           )}
-
         </div>
 
-        {/* Footer */}
-        <div className="p-6 border-t border-slate-700 flex justify-end">
-          <button 
-            onClick={onClose}
-            className="border-2 border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all"
-          >
-            Fechar
-          </button>
+        {/* Footer - fixed at bottom of modal */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-slate-200 bg-white rounded-b-2xl">
+          <div className="flex justify-end max-w-[calc(100%-3rem)] mx-auto">
+            <button 
+              onClick={onClose}
+              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-sm"
+            >
+              Fechar
+            </button>
+          </div>
         </div>
+
+        {/* Close Button */}
+        <button 
+          onClick={onClose} 
+          className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-slate-50 text-slate-600 hover:text-slate-800 w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-lg"
+        >
+          <i className="fas fa-times"></i>
+        </button>
       </div>
     </div>
   );
