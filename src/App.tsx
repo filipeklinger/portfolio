@@ -377,7 +377,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
               </div>
               <button onClick={() => (window as any).openModal('modal1')} className="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
-                Ver Detalhes <i className="fas fa-arrow-right ml-2"></i>
+                 Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
             
@@ -395,7 +395,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">MySQL</span>
               </div>
               <button onClick={() => (window as any).openModal('modal2')} className="text-purple-400 hover:text-purple-300 font-semibold flex items-center">
-                Ver Detalhes <i className="fas fa-arrow-right ml-2"></i>
+                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
             
@@ -414,7 +414,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
               </div>
               <button onClick={() => (window as any).openModal('modal3')} className="text-green-600 hover:text-green-800 font-semibold flex items-center">
-                Ver Detalhes <i className="fas fa-arrow-right ml-2"></i>
+                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
             
@@ -433,7 +433,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MariaDB</span>
               </div>
               <button onClick={() => (window as any).openModal('modal4')} className="text-orange-400 hover:text-orange-300 font-semibold flex items-center">
-                Ver Detalhes <i className="fas fa-arrow-right ml-2"></i>
+                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
           </div>

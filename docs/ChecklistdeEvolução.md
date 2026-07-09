@@ -75,7 +75,7 @@ Todos os projetos devem possuir:
 
 ---
 
-## ☐ Alterar botão
+## ☑ Alterar botão
 
 Substituir
 
