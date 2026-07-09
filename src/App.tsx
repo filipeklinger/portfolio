@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Chatbot from './components/CustomChatbot';
 import CaseStudyModal from './components/CaseStudyModal';
+import { translations } from './translations';
 
 function App() {
   const [anfopeModalOpen, setAnfopeModalOpen] = useState(false);
@@ -263,11 +264,11 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               <span className="text-blue-400">&lt;</span>Filipe Klinger<span className="text-blue-400">/&gt;</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="nav-link text-slate-300 hover:text-blue-400">Início</a>
-              <a href="#about" className="nav-link text-slate-300 hover:text-blue-400">Sobre</a>
-              <a href="#projects" className="nav-link text-slate-300 hover:text-blue-400">Projetos</a>
-              <a href="#skills" className="nav-link text-slate-300 hover:text-blue-400">Habilidades</a>
-              <a href="#contact" className="nav-link text-slate-300 hover:text-blue-400">Contato</a>
+              <a href="#home" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.home}</a>
+              <a href="#about" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.about}</a>
+              <a href="#projects" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.projects}</a>
+              <a href="#skills" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.skills}</a>
+              <a href="#contact" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.contact}</a>
             </div>
             <button className="md:hidden text-slate-300 flex-shrink-0 p-2" onClick={() => (window as any).toggleMobileMenu()}>
               <i className="fas fa-bars text-lg"></i>
@@ -276,11 +277,11 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
           {/* Mobile Menu */}
           <div id="mobileMenu" className="hidden md:hidden mt-4 pb-4 overflow-hidden">
             <div className="flex flex-col space-y-3">
-              <a href="#home" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Início</a>
-              <a href="#about" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Sobre</a>
-              <a href="#projects" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Projetos</a>
-              <a href="#skills" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Habilidades</a>
-              <a href="#contact" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>Contato</a>
+              <a href="#home" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>{translations.nav.home}</a>
+              <a href="#about" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>{translations.nav.about}</a>
+              <a href="#projects" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>{translations.nav.projects}</a>
+              <a href="#skills" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>{translations.nav.skills}</a>
+              <a href="#contact" className="text-slate-300 hover:text-blue-400 py-2 px-3 rounded transition-colors" onClick={() => (window as any).toggleMobileMenu()}>{translations.nav.contact}</a>
             </div>
           </div>
         </div>
@@ -314,17 +315,17 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               </div>
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-slate-100">Sênior Software Engineer</span>
+              <span className="text-slate-100">{translations.hero.titleSenior}</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Projetando arquiteturas escaláveis e desenvolvendo soluções de alto impacto para sistemas corporativos
+              {translations.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
               <a href="#projects" className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-center">
-                Ver Projetos
+                {translations.hero.buttonProjects}
               </a>
               <a href="#contact" className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 text-center">
-                Entre em Contato
+                {translations.hero.buttonContact}
               </a>
             </div>
           </div>
@@ -339,7 +340,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="slide-in text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
-              <span className="text-blue-400">&lt;</span>Sobre Mim<span className="text-blue-400">/&gt;</span>
+              <span className="text-blue-400"></span>{translations.about.title}<span className="text-blue-400"></span>
             </h2>
             <div className="code-lines w-24 mx-auto mb-8"></div>
           </div>
@@ -370,29 +371,25 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             </div>
             
             <div className="slide-in">
-              <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100">Engenheiro de Software Sênior</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100">{translations.about.roleTitle}</h3>
               <p className="sm:text-lg text-slate-300 mb-6 leading-relaxed break-words px-4">
-                Engenheiro de Software Sênior com experiência no desenvolvimento de sistemas corporativos 
-                utilizando .NET, Angular, React, Node.js e AWS.
+                {translations.about.description1}
               </p>
               <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-4">
-                Atuo na definição de arquitetura, evolução de aplicações legadas, desenvolvimento de APIs, 
-                sistemas distribuídos, processamento assíncrono e integração entre sistemas.
+                {translations.about.description2}
               </p>
               <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-4">
-                Tenho interesse especial em arquitetura de software, design de soluções, otimização de 
-                performance e construção de aplicações escaláveis, sempre buscando equilibrar qualidade 
-                técnica, simplicidade e valor para o negócio.
+                {translations.about.description3}
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                  <div className="text-center">
                    <div className="text-2xl sm:text-3xl font-bold text-blue-400">20+</div>
-                   <div className="text-sm sm:text-base text-slate-300">Projetos Entregues</div>
+                   <div className="text-sm sm:text-base text-slate-300">{translations.about.projectsDelivered}</div>
                  </div>
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-blue-400">{calculateYearsOfExperience()}+</div>
-                  <div className="text-sm sm:text-base text-slate-300">Anos de Experiência</div>
+                  <div className="text-sm sm:text-base text-slate-300">{translations.about.yearsExperience}</div>
                 </div>
               </div>
             </div>
@@ -405,11 +402,11 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="slide-in text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
-              <span className="text-blue-400">&lt;</span>Projetos<span className="text-blue-400">/&gt;</span>
+              <span className="text-blue-400"></span>{translations.projects.title}<span className="text-blue-400"></span>
             </h2>
             <div className="code-lines w-24 mx-auto mb-8"></div>
             <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
-              Soluções inovadoras que demonstram expertise técnica e visão estratégica
+              {translations.projects.subtitle}
             </p>
           </div>
           
@@ -427,7 +424,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
               </div>
               <button onClick={() => (window as any).openModal('modal1')} className="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
-                 Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+                 {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
             
@@ -445,7 +442,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">MySQL</span>
               </div>
               <button onClick={() => (window as any).openModal('modal2')} className="text-purple-400 hover:text-purple-300 font-semibold flex items-center">
-                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+                {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
             
@@ -464,7 +461,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
               </div>
               <button onClick={() => (window as any).openModal('modal3')} className="text-green-600 hover:text-green-800 font-semibold flex items-center">
-                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+                {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
             
@@ -483,7 +480,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MariaDB</span>
               </div>
               <button onClick={() => (window as any).openAnfopeModal()} className="text-orange-400 hover:text-orange-300 font-semibold flex items-center">
-                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+                {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
 
@@ -503,7 +500,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">APIs REST</span>
               </div>
               <button onClick={() => (window as any).openModal('modal5')} className="text-pink-600 hover:text-pink-800 font-semibold flex items-center">
-                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+                {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
 
@@ -522,7 +519,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
               </div>
               <button onClick={() => (window as any).openModal('modal6')} className="text-teal-600 hover:text-teal-800 font-semibold flex items-center">
-                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+                {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
           </div>

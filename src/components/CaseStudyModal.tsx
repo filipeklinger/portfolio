@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { translations } from '../translations';
 
 interface ProjectData {
   title: string;
@@ -97,8 +98,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
         <div className="p-8 space-y-8 overflow-y-auto flex-1">
           
           {/* Overview */}
-          <section>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">Visão Geral</h3>
+           <section>
+             <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.overview}</h3>
             <div className="prose max-w-none text-slate-700 leading-relaxed">
               {overview.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
@@ -107,8 +108,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           </section>
 
           {/* Context */}
-          <section>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">Contexto</h3>
+           <section>
+             <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.context}</h3>
             <div className="prose max-w-none text-slate-700 leading-relaxed">
               {context.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
@@ -117,8 +118,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           </section>
 
           {/* Challenge */}
-          <section>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">O Desafio</h3>
+           <section>
+             <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.challenge}</h3>
             <div className="prose max-w-none text-slate-700 leading-relaxed">
               {challenge.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
@@ -127,8 +128,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           </section>
 
           {/* My Role */}
-          <section>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">Minha Atuação</h3>
+           <section>
+             <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.myRole}</h3>
             <div className="grid md:grid-cols-2 gap-3">
               {myRole.map((item, index) => (
                 <div key={index} className="flex items-center bg-slate-50 p-3 rounded-lg border border-slate-200">
@@ -140,8 +141,8 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           </section>
 
           {/* Solution */}
-          <section>
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">Solução</h3>
+           <section>
+             <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.solution}</h3>
             <div className="prose max-w-none text-slate-700 leading-relaxed">
               {solution.split('\n').map((paragraph, i) => (
                 <p key={i} className={i > 0 ? "mt-4" : ""}>{paragraph}</p>
@@ -150,9 +151,9 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           </section>
 
           {/* Features */}
-          {features.length > 0 && (
-            <section>
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Principais Funcionalidades</h3>
+           {features.length > 0 && (
+             <section>
+               <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.featuresTitle}</h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start text-slate-700">
@@ -165,9 +166,9 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           )}
 
           {/* Technologies */}
-          {Object.keys(techCategories).length > 0 && (
-            <section>
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Tecnologias</h3>
+           {Object.keys(techCategories).length > 0 && (
+             <section>
+               <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.technologies}</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {techCategories.backend && techCategories.backend.length > 0 && (
                   <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
@@ -248,9 +249,9 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
           )}
 
           {/* Gallery */}
-          {gallery && gallery.length > 0 && (
-            <section>
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Galeria</h3>
+           {gallery && gallery.length > 0 && (
+             <section>
+               <h3 className="text-2xl font-bold text-blue-600 mb-4">{translations.caseStudy.gallery}</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {gallery.map((item, index) => (
                   <div key={index} className="rounded-lg overflow-hidden border border-slate-200 shadow-sm">
@@ -276,7 +277,7 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
               onClick={onClose}
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-sm"
             >
-              Fechar
+              {translations.buttons.close}
             </button>
           </div>
         </div>
