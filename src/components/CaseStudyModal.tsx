@@ -52,7 +52,7 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
   const { title, subtitle, technologies, role, type, status, overview, context, challenge, myRole, solution, features, techCategories, gallery } = project;
 
    return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/50 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-5xl mx-auto my-8 rounded-2xl bg-white shadow-xl border border-slate-300 animate-slideUp max-h-[90vh] flex flex-col overflow-hidden">
         {/* Hero Section */}
         <div className="relative rounded-t-2xl overflow-hidden">
