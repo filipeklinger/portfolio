@@ -20,7 +20,7 @@
 
 ---
 
-### Alterar o subtítulo
+### ☑ Alterar o subtítulo
 
 **De**
 
@@ -56,7 +56,7 @@ Exemplo:
 
 ---
 
-### Anos de Experiência
+### ☑ Anos de Experiência
 
 Atualizar para o valor correto. (Cálculo automático mantido - 7+ anos desde 2019)
 
@@ -64,7 +64,7 @@ Atualizar para o valor correto. (Cálculo automático mantido - 7+ anos desde 20
 
 # ⭐ Seção Projetos
 
-## ☐ Atualizar todos os cards
+## ☑ Atualizar todos os cards
 
 Todos os projetos devem possuir:
 
@@ -89,7 +89,7 @@ Esse pequeno ajuste transmite muito mais profissionalismo e reforça a ideia de 
 
 ---
 
-## ☐ Adicionar novos projetos
+## ☑ Adicionar novos projetos
 
 Adicionar:
 
@@ -98,7 +98,7 @@ Adicionar:
 
 ---
 
-## ☐ Atualizar BTG Campus
+## ☑ Atualizar BTG Campus
 
 Destacar aspectos técnicos.
 
@@ -108,7 +108,7 @@ Novo resumo:
 
 ---
 
-## ☐ Atualizar Sistema da Associação de Professores
+## ☑ Atualizar Sistema da Associação de Professores
 
 Destacar que foi um projeto freelancer desenvolvido de ponta a ponta.
 
