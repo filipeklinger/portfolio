@@ -406,7 +406,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               </div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">BTG Campus - Plataforma de Cursos</h3>
               <p className="text-slate-300 mb-4">
-                Plataforma de cursos internos para o BTG Pactual, oferecendo treinamentos e capacitações aos colaboradores. Projeto realizado na TG4.
+                Plataforma corporativa de educação para treinamentos internos. Evolução da arquitetura responsável pelo cálculo de progresso dos alunos, utilizando processamento incremental baseado em DAG, persistência otimizada em MongoDB e cache em memória para melhoria de performance e escalabilidade.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">.NET C#</span>
@@ -425,7 +425,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               </div>
               <h3 className="text-xl font-bold mb-3 text-slate-100">Anfope - Sistema de Gestão</h3>
               <p className="text-slate-300 mb-4">
-                Sistema completo para gestão de associados, professores e estudantes, centralizando processos como cadastros, certificados e relatórios.
+                Plataforma completa para gestão administrativa desenvolvida de ponta a ponta como freelancer. Contempla gestão de associados, anuidades, processos eleitorais, administração institucional e integração com provedores de pagamento.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">HTML + JS</span>
@@ -433,6 +433,45 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MariaDB</span>
               </div>
               <button onClick={() => (window as any).openModal('modal4')} className="text-orange-400 hover:text-orange-300 font-semibold flex items-center">
+                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+
+            {/* Project 5 - Samsung Knox */}
+            <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+              <div className="bg-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-cloud text-white text-xl"></i>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Samsung Knox - Plataforma de Segurança</h3>
+              <p className="text-slate-300 mb-4">
+                Desenvolvimento da camada cloud para integração com a plataforma Samsung Knox. Criação de APIs RESTful que se comunicam com a API do Knox (via webhook ativado pelo sistema de vendas), sem uso de SDK Android. Solução serverless hospedada na AWS, processando dados de segurança empresarial em tempo real.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">AWS</span>
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Lambda</span>
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">SQS</span>
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">APIs REST</span>
+              </div>
+              <button onClick={() => (window as any).openModal('modal5')} className="text-pink-600 hover:text-pink-800 font-semibold flex items-center">
+                Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+
+            {/* Project 6 - Performance Empresarial */}
+            <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+              <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-chart-line text-white text-xl"></i>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-100">Sistema de Performance Empresarial</h3>
+              <p className="text-slate-300 mb-4">
+                Plataforma completa para monitoramento de KPIs, metas e desempenho organizacional. Dashboard interativo com visualizações em tempo real, alertas automatizados e relatórios gerenciais personalizáveis.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">React</span>
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+              </div>
+              <button onClick={() => (window as any).openModal('modal6')} className="text-teal-600 hover:text-teal-800 font-semibold flex items-center">
                 Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
