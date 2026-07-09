@@ -264,11 +264,10 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
               </div>
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-slate-100">Desenvolvedor &</span><br />
-              <span className="text-blue-400">Arquiteto de Software</span>
+              <span className="text-slate-100">Sênior Software Engineer</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transformando ideias complexas em soluções elegantes e escaláveis
+              Projetando arquiteturas escaláveis e desenvolvendo soluções de alto impacto para sistemas corporativos
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
               <a href="#projects" className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-center">
@@ -321,23 +320,26 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             </div>
             
             <div className="slide-in">
-              <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100">Desenvolvedor Full Stack</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100">Engenheiro de Software Sênior</h3>
               <p className="sm:text-lg text-slate-300 mb-6 leading-relaxed break-words px-4">
-                Especialista em sistemas web com experiência sólida em backend, frontend, 
-                integrações e cloud. Sempre buscando aprender novas tecnologias e 
-                aprimorar minhas habilidades.
+                Engenheiro de Software Sênior com experiência no desenvolvimento de sistemas corporativos 
+                utilizando .NET, Angular, React, Node.js e AWS.
               </p>
               <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-4">
-                Apaixonado por criar soluções eficientes e que entregam valor. 
-                Acredito que a melhor tecnologia é aquela que resolve problemas reais 
-                de forma elegante, transformando complexidade em simplicidade.
+                Atuo na definição de arquitetura, evolução de aplicações legadas, desenvolvimento de APIs, 
+                sistemas distribuídos, processamento assíncrono e integração entre sistemas.
+              </p>
+              <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-4">
+                Tenho interesse especial em arquitetura de software, design de soluções, otimização de 
+                performance e construção de aplicações escaláveis, sempre buscando equilibrar qualidade 
+                técnica, simplicidade e valor para o negócio.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">10+</div>
-                  <div className="text-sm sm:text-base text-slate-300">Projetos Entregues</div>
-                </div>
+                 <div className="text-center">
+                   <div className="text-2xl sm:text-3xl font-bold text-blue-400">20+</div>
+                   <div className="text-sm sm:text-base text-slate-300">Projetos Entregues</div>
+                 </div>
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-blue-400">{calculateYearsOfExperience()}+</div>
                   <div className="text-sm sm:text-base text-slate-300">Anos de Experiência</div>

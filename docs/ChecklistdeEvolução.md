@@ -6,7 +6,7 @@
 
 # 🔥 Prioridade Alta
 
-## ☐ Atualizar o Hero da Home
+## ☑ Atualizar o Hero da Home
 
 ### Alterar o título
 
@@ -32,7 +32,7 @@
 
 ---
 
-## ☐ Reescrever completamente a seção "Sobre"
+## ☑ Reescrever completamente a seção "Sobre"
 
 Substituir o texto atual pelo seguinte:
 
@@ -44,7 +44,7 @@ Substituir o texto atual pelo seguinte:
 
 ---
 
-## ☐ Atualizar indicadores
+## ☑ Atualizar indicadores
 
 ### Projetos Entregues
 
@@ -52,13 +52,13 @@ Atualizar para um número mais representativo da carreira.
 
 Exemplo:
 
-**20+**
+**20+** (Atualizado)
 
 ---
 
 ### Anos de Experiência
 
-Atualizar para o valor correto.
+Atualizar para o valor correto. (Cálculo automático mantido - 7+ anos desde 2019)
 
 ---
 
