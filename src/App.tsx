@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Chatbot from './components/CustomChatbot';
+import CaseStudyModal from './components/CaseStudyModal';
 
 function App() {
+  const [anfopeModalOpen, setAnfopeModalOpen] = useState(false);
+
   // Função para calcular anos de experiência desde 2019
   const calculateYearsOfExperience = () => {
     const startDate = new Date(2019, 0, 1); // 1 de janeiro de 2021
@@ -101,21 +104,24 @@ function App() {
 
     // Make functions globally available
     (window as any).toggleMobileMenu = toggleMobileMenu;
-    (window as any).openModal = (modalId: string) => {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-      }
-    };
-    
-    (window as any).closeModal = (modalId: string) => {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
-      }
-    };
+      (window as any).openAnfopeModal = () => setAnfopeModalOpen(true);
+      (window as any).closeAnfopeModal = () => setAnfopeModalOpen(false);
+
+      (window as any).openModal = (modalId: string) => {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
+      };
+      
+      (window as any).closeModal = (modalId: string) => {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = 'auto';
+        }
+      };
 
     // COMENTADO TEMPORARIAMENTE - Formulário de contato não funcional
     /*
@@ -205,6 +211,50 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
 
   return (
     <div className="bg-slate-900 text-slate-100 overflow-x-hidden">
+      {/* Case Study Modal - Anfope (renderizado aqui para evitar erros de zIndex) */}
+      <CaseStudyModal 
+        isOpen={anfopeModalOpen}
+        onClose={() => setAnfopeModalOpen(false)}
+        project={{
+          title: "Anfope - Sistema de Gestão",
+          subtitle: "Plataforma completa para gestão administrativa desenvolvida de ponta a ponta como freelancer",
+          technologies: ["HTML + JS", "PHP", "MariaDB"],
+          role: "Full Stack Developer (Freelancer)",
+          type: "Freelancer",
+          status: "Finalizado",
+          overview: "O sistema Anfope foi desenvolvido para facilitar a gestão de associados, professores, estudantes e demais participantes da organização. Seu principal objetivo é centralizar e automatizar processos administrativos, oferecendo uma solução completa para gerenciamento organizacional.",
+          context: "A associação precisava de um sistema unificado para controlar todos os seus membros e processos internos. Antes do desenvolvimento do Anfope, a gestão era feita de forma manual ou com sistemas fragmentados, causando perda de tempo e erros nos processos administrativos. O projeto foi desenvolvido para substituir essa realidade por uma solução integrada e robusta.",
+          challenge: "A principal dificuldade foi criar um sistema que fosse fácil de usar para usuários não técnicos, mas ao mesmo tempo oferecesse recursos avançados de gestão. Além disso, o sistema precisava lidar com processos eleitorais complexos e integração com sistemas de pagamento para anuidades.",
+          myRole: [
+            "Levantamento de requisitos",
+            "Arquitetura do sistema",
+            "Backend (PHP)",
+            "Frontend (HTML + JS)",
+            "Banco de Dados",
+            "Integrações com provedores de pagamento"
+          ],
+          solution: "O sistema foi desenvolvido com arquitetura MVC, separando claramente a lógica de negócio da apresentação. O backend em PHP manipula todos os dados e regras de negócio, enquanto o frontend HTML + JavaScript cuida da interação com o usuário. Para as integrações bancárias, foi escolhida uma abordagem segura com redirecionamento para páginas de pagamento oficiais dos provedores.",
+          features: [
+            "Cadastro e gestão completa de associados",
+            "Controle de acesso por perfis de usuário (admin, tesoureiro, coordenador)",
+            "Emissão automática de certificados para eventos",
+            "Gerenciamento de anuidades com alertas de vencimento",
+            "Sistema eleitoral completo com candidaturas e votação",
+            "Geração de relatórios administrativos em PDF"
+          ],
+           techCategories: {
+             backend: ["PHP", "MVC Architecture"],
+             frontend: ["HTML5", "JavaScript", "CSS3"],
+             database: ["MariaDB"],
+             cloud: [],
+             infrastructure: []
+           },
+           gallery: [
+             { image: "/img/anfope.webp", caption: "Tela inicial do sistema Anfope" }
+           ]
+        }}
+      />
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-slate-800/90 backdrop-blur-md z-50 border-b border-slate-700">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
@@ -432,7 +482,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
                 <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">PHP</span>
                 <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MariaDB</span>
               </div>
-              <button onClick={() => (window as any).openModal('modal4')} className="text-orange-400 hover:text-orange-300 font-semibold flex items-center">
+              <button onClick={() => (window as any).openAnfopeModal()} className="text-orange-400 hover:text-orange-300 font-semibold flex items-center">
                 Estudo de Caso <i className="fas fa-arrow-right ml-2"></i>
               </button>
             </div>
@@ -655,7 +705,9 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
       </section>
 
       {/* Project Modals */}
-      {/* Modal 1 - Arbi Landing Page */}
+      {/* Note: Only the Anfope modal is rendered via CaseStudyModal component above. 
+          The other project modals (modal1-6) are defined below but may not be functional. 
+          If needed, they should use a similar pattern to the Anfope modal. */}
       <div id="modal1" className="modal">
         <div className="modal-content">
           <div className="relative">
@@ -867,76 +919,49 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
         </div>
       </div>
       
-      {/* Modal 4 - Anfope */}
-      <div id="modal4" className="modal">
-        <div className="modal-content">
-          <div className="relative">
-            <button onClick={() => (window as any).closeModal('modal4')} className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
-              <i className="fas fa-times"></i>
-            </button>
-            
-            <div className="relative rounded-t-2xl overflow-hidden">
-              <img src="/img/anfope.webp" alt="Anfope Sistema de Gestão" className="w-full h-64 object-cover" />
-            </div>
-            
-            <div className="p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-orange-600 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                  <i className="fas fa-users text-white text-xl"></i>
-                </div>
-                <h2 className="text-3xl font-bold text-slate-800">Anfope - Sistema de Gestão</h2>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">HTML + JS</span>
-                <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">PHP</span>
-                <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MariaDB</span>
-              </div>
-              
-              <div className="prose max-w-none mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-slate-800">Descrição Completa</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
-                  O sistema Anfope foi desenvolvido para facilitar a gestão de associados, professores, estudantes e demais participantes da organização. Seu principal objetivo é centralizar e automatizar processos administrativos, oferecendo uma solução completa para gerenciamento organizacional.
-                </p>
-                <p className="text-slate-600 mb-4 leading-relaxed">
-                  Desenvolvido com tecnologias web tradicionais mas eficazes, o sistema utiliza HTML, JavaScript, PHP e MariaDB para oferecer uma solução robusta e confiável para as necessidades específicas da Anfope.
-                </p>
-                
-                <h4 className="text-lg font-semibold mb-3 text-slate-800">Principais Funcionalidades:</h4>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-6">
-                  <li>Cadastro e gestão de associados</li>
-                  <li>Controle de acesso por perfis de usuário</li>
-                  <li>Emissão automática de certificados</li>
-                  <li>Gerenciamento de anuidades e pagamentos</li>
-                  <li>Sistema de eleições internas</li>
-                  <li>Geração de relatórios administrativos</li>
-                </ul>
-                
-                <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  <div className="bg-slate-50 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-orange-600">PHP</div>
-                    <div className="text-sm text-slate-600">Backend</div>
-                  </div>
-                  <div className="bg-slate-50 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-orange-600">MariaDB</div>
-                    <div className="text-sm text-slate-600">Database</div>
-                  </div>
-                  <div className="bg-slate-50 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-orange-600">Web</div>
-                    <div className="text-sm text-slate-600">Platform</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={() => (window as any).closeModal('modal4')} className="border-2 border-slate-300 text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-semibold transition-all">
-                  Fechar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Case Study Modal - Anfope */}
+      <CaseStudyModal 
+        isOpen={anfopeModalOpen}
+        onClose={() => setAnfopeModalOpen(false)}
+        project={{
+          title: "Anfope - Sistema de Gestão",
+          subtitle: "Plataforma completa para gestão administrativa desenvolvida de ponta a ponta como freelancer",
+          technologies: ["HTML + JS", "PHP", "MariaDB"],
+          role: "Full Stack Developer (Freelancer)",
+          type: "Freelancer",
+          status: "Finalizado",
+          overview: "O sistema Anfope foi desenvolvido para facilitar a gestão de associados, professores, estudantes e demais participantes da organização. Seu principal objetivo é centralizar e automatizar processos administrativos, oferecendo uma solução completa para gerenciamento organizacional.",
+          context: "A associação precisava de um sistema unificado para controlar todos os seus membros e processos internos. Antes do desenvolvimento do Anfope, a gestão era feita de forma manual ou com sistemas fragmentados, causando perda de tempo e erros nos processos administrativos. O projeto foi desenvolvido para substituir essa realidade por uma solução integrada e robusta.",
+          challenge: "A principal dificuldade foi criar um sistema que fosse fácil de usar para usuários não técnicos, mas ao mesmo tempo oferecesse recursos avançados de gestão. Além disso, o sistema precisava lidar com processos eleitorais complexos e integração com sistemas de pagamento para anuidades.",
+          myRole: [
+            "Levantamento de requisitos",
+            "Arquitetura do sistema",
+            "Backend (PHP)",
+            "Frontend (HTML + JS)",
+            "Banco de Dados",
+            "Integrações com provedores de pagamento"
+          ],
+          solution: "O sistema foi desenvolvido com arquitetura MVC, separando claramente a lógica de negócio da apresentação. O backend em PHP manipula todos os dados e regras de negócio, enquanto o frontend HTML + JavaScript cuida da interação com o usuário. Para as integrações bancárias, foi escolhida uma abordagem segura com redirecionamento para páginas de pagamento oficiais dos provedores.",
+          features: [
+            "Cadastro e gestão completa de associados",
+            "Controle de acesso por perfis de usuário (admin, tesoureiro, coordenador)",
+            "Emissão automática de certificados para eventos",
+            "Gerenciamento de anuidades com alertas de vencimento",
+            "Sistema eleitoral completo com candidaturas e votação",
+            "Geração de relatórios administrativos em PDF"
+          ],
+          techCategories: {
+            backend: ["PHP", "MVC Architecture"],
+            frontend: ["HTML5", "JavaScript", "CSS3"],
+            database: ["MariaDB"],
+            cloud: [],
+            infrastructure: []
+          },
+          gallery: [
+            { image: "/img/anfope.webp", caption: "Tela inicial do sistema Anfope" }
+          ]
+        }}
+      />
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-8">
