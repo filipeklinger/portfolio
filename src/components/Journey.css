@@ -1,43 +1,43 @@
-/* Timeline Styles - Estilização específica para a linha do tempo */
-.timeline-container {
+/* Timeline Styles - Linha do tempo alternada (esquerda/direita) */
+.timeline {
   position: relative;
+  max-width: 100%;
 }
 
-.timeline-container::before {
+/* Linha central vertical */
+.timeline::before {
   content: '';
   position: absolute;
+  top: 0;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  top: 4rem;
-  bottom: 0;
   width: 4px;
   background: linear-gradient(to bottom, #3b82f6, #a855f7, #22c55e);
+  z-index: 0;
+}
+
+/* Cada item ocupa metade da largura */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1.5rem 3rem;
+  box-sizing: border-box;
   z-index: 1;
 }
 
-/* Container da timeline - usa flex para alinhar colunas */
-.timeline-container {
-  display: flex;
-  gap: 0;
-}
-
-.timeline-column-left,
-.timeline-column-right {
-  position: relative;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Itens da timeline - Esquerda */
-.timeline-item-left {
-  position: relative;
-  width: 100%;
-  padding-right: 60px;
-  padding-top: 3rem;
+/* Ponto sobre a linha central */
+.timeline-dot {
+  position: absolute;
+  top: 2.5rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 4px solid #0f172a;
+  box-shadow: 0 0 0 2px #3b82f6;
   z-index: 2;
 }
-
 
 .timeline-content {
   background: #1e293b;
@@ -45,7 +45,6 @@
   border-radius: 1rem;
   padding: 2rem;
   position: relative;
-  z-index: 2;
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -54,78 +53,78 @@
   border-color: #3b82f6;
 }
 
-/* Itens da timeline - Direita (começa mais baixo para alinhar cronologicamente) */
-.timeline-item-right {
-  position: relative;
-  width: 100%;
-  padding-left: 60px;
-  padding-top: 10rem; /* Começa mais baixo que o primeiro item da esquerda */
-  z-index: 2;
-}
-
-
-.timeline-item-right .timeline-content {
-  text-align: left;
-}
-
-/* Mobile Styles - Stack everything */
-@media (max-width: 768px) {
-  .timeline-container::before {
-    left: 30px;
-  }
-
-  .timeline-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .timeline-column-left,
-  .timeline-column-right {
-    width: 100%;
-    float: none;
-  }
-
-  .timeline-item-left,
-  .timeline-item-right {
-    padding-left: 70px;
-    padding-right: 20px;
-    margin-bottom: 2rem;
-  }
-
-  /* Reset offset no mobile */
-  .timeline-item-right {
-    padding-top: 3rem;
-  }
-
-  .timeline-content {
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-  }
-}
-
-/* Desktop Styles - Alternating sides */
+/* Desktop - lados alternados */
 @media (min-width: 769px) {
-  /* Espaçamento da coluna esquerda */
-  .timeline-item-left::before {
+  /* Itens ímpares (1, 3, 5, 7) à esquerda */
+  .timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-heading {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot {
+    right: -9px;
+  }
+
+  /* Seta apontando para a linha */
+  .timeline-item:nth-child(odd) .timeline-content::after {
     content: '';
     position: absolute;
+    top: calc(1rem - 1px);
     right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-left: 10px solid #1e293b;
   }
 
-  /* Espaçamento da coluna direita */
-  .timeline-item-right::before {
+  /* Itens pares (2, 4, 6) à direita */
+  .timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: -9px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content::after {
     content: '';
     position: absolute;
+    top: calc(1rem - 1px);
     left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #1e293b;
+  }
+}
+
+/* Mobile - tudo em uma coluna, linha à esquerda */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3.5rem;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: translateX(-50%);
+    top: 2rem;
+  }
+
+  .timeline-content::after {
+    content: '';
+    position: absolute;
+    top: calc(1rem - 1px);
+    left: -20px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-right: 10px solid #1e293b;
