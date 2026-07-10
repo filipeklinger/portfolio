@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Chatbot from './components/CustomChatbot';
 import CaseStudyModal from './components/CaseStudyModal';
+import Journey from './components/Journey';
 import { translations } from './translations';
 
 function App() {
@@ -266,6 +267,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             <div className="hidden md:flex space-x-8">
               <a href="#home" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.home}</a>
               <a href="#about" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.about}</a>
+              <a href="#journey" className="nav-link text-slate-300 hover:text-blue-400">Minha Jornada</a>
               <a href="#projects" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.projects}</a>
               <a href="#skills" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.skills}</a>
               <a href="#contact" className="nav-link text-slate-300 hover:text-blue-400">{translations.nav.contact}</a>
@@ -396,6 +398,9 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
           </div>
         </div>
       </section>
+
+      {/* Journey Section */}
+      <Journey />
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-slate-900">
