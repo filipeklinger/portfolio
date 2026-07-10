@@ -71,7 +71,6 @@ const Journey = () => {
           <div className="timeline-column-left">
             {leftEvents.map((event, index) => (
               <div key={`left-${index}`} className="timeline-item-left slide-in">
-                <div className="timeline-dot"></div>
                 <div className="timeline-content text-right">
                   <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
                   <div className="flex items-center justify-end gap-3 mb-3">
@@ -85,11 +84,10 @@ const Journey = () => {
           </div>
 
           {/* Coluna direita */}
-          <div className="timeline-column-right">
-            {rightEvents.map((event, index) => (
-              <div key={`right-${index}`} className="timeline-item-right slide-in">
-                <div className="timeline-dot"></div>
-                <div className="timeline-content text-left">
+        <div className="timeline-column-right">
+          {rightEvents.map((event, index) => (
+            <div key={`right-${index}`} className="timeline-item-right slide-in">
+              <div className="timeline-content text-left">
                   <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="text-4xl">{event.icon}</div>

@@ -8,49 +8,36 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 24px;
+  top: 4rem;
   bottom: 0;
   width: 4px;
   background: linear-gradient(to bottom, #3b82f6, #a855f7, #22c55e);
   z-index: 1;
 }
 
-/* Colunas */
+/* Container da timeline - usa flex para alinhar colunas */
+.timeline-container {
+  display: flex;
+  gap: 0;
+}
+
 .timeline-column-left,
 .timeline-column-right {
   position: relative;
   width: 50%;
-  float: left;
-}
-
-/* Clearfix para os floats */
-.timeline-container::after {
-  content: '';
-  display: table;
-  clear: both;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Itens da timeline - Esquerda */
 .timeline-item-left {
   position: relative;
-  margin-bottom: 4rem;
+  width: 100%;
   padding-right: 60px;
-  padding-top: 1rem;
+  padding-top: 3rem;
   z-index: 2;
 }
 
-.timeline-dot {
-  position: absolute;
-  right: 12px;
-  top: 3rem;
-  transform: translateX(50%);
-  z-index: 10;
-  width: 24px;
-  height: 24px;
-  background: #0f172a;
-  border: 4px solid #3b82f6;
-  border-radius: 50%;
-}
 
 .timeline-content {
   background: #1e293b;
@@ -67,20 +54,15 @@
   border-color: #3b82f6;
 }
 
-/* Itens da timeline - Direita */
+/* Itens da timeline - Direita (começa mais baixo para alinhar cronologicamente) */
 .timeline-item-right {
   position: relative;
-  margin-bottom: 4rem;
+  width: 100%;
   padding-left: 60px;
-  padding-top: 1rem;
+  padding-top: 10rem; /* Começa mais baixo que o primeiro item da esquerda */
   z-index: 2;
 }
 
-.timeline-item-right .timeline-dot {
-  left: 12px;
-  right: auto;
-  transform: translateX(-50%);
-}
 
 .timeline-item-right .timeline-content {
   text-align: left;
@@ -92,22 +74,27 @@
     left: 30px;
   }
 
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .timeline-column-left,
   .timeline-column-right {
     width: 100%;
     float: none;
   }
 
-  .timeline-dot {
-    left: 30px;
-    transform: translateX(-50%);
-  }
-
   .timeline-item-left,
   .timeline-item-right {
     padding-left: 70px;
     padding-right: 20px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Reset offset no mobile */
+  .timeline-item-right {
+    padding-top: 3rem;
   }
 
   .timeline-content {
@@ -115,11 +102,6 @@
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-  }
-  
-  .timeline-dot {
-    right: auto;
-    left: 30px;
   }
 }
 
