@@ -12,19 +12,38 @@
   bottom: 0;
   width: 4px;
   background: linear-gradient(to bottom, #3b82f6, #a855f7, #22c55e);
-  z-index: 0;
+  z-index: 1;
 }
 
-.timeline-item {
+/* Colunas */
+.timeline-column-left,
+.timeline-column-right {
+  position: relative;
+  width: 50%;
+  float: left;
+}
+
+/* Clearfix para os floats */
+.timeline-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Itens da timeline - Esquerda */
+.timeline-item-left {
   position: relative;
   margin-bottom: 4rem;
-  z-index: 1;
+  padding-right: 60px;
+  padding-top: 1rem;
+  z-index: 2;
 }
 
 .timeline-dot {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 12px;
+  top: 3rem;
+  transform: translateX(50%);
   z-index: 10;
   width: 24px;
   height: 24px;
@@ -48,39 +67,66 @@
   border-color: #3b82f6;
 }
 
+/* Itens da timeline - Direita */
+.timeline-item-right {
+  position: relative;
+  margin-bottom: 4rem;
+  padding-left: 60px;
+  padding-top: 1rem;
+  z-index: 2;
+}
+
+.timeline-item-right .timeline-dot {
+  left: 12px;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+.timeline-item-right .timeline-content {
+  text-align: left;
+}
+
 /* Mobile Styles - Stack everything */
 @media (max-width: 768px) {
   .timeline-container::before {
     left: 30px;
   }
 
-  .timeline-dot {
-    left: 30px;
+  .timeline-column-left,
+  .timeline-column-right {
+    width: 100%;
+    float: none;
   }
 
-  .timeline-item {
+  .timeline-dot {
+    left: 30px;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item-left,
+  .timeline-item-right {
     padding-left: 70px;
     padding-right: 20px;
+    margin-bottom: 3rem;
   }
 
   .timeline-content {
     max-width: none;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
+  }
+  
+  .timeline-dot {
+    right: auto;
+    left: 30px;
   }
 }
 
 /* Desktop Styles - Alternating sides */
 @media (min-width: 769px) {
-  .desktop-left {
-    text-align: right;
-  }
-
-  .desktop-left .timeline-content {
-    margin-left: auto;
-  }
-
-  .desktop-left::before {
+  /* Espaçamento da coluna esquerda */
+  .timeline-item-left::before {
     content: '';
     position: absolute;
     right: -20px;
@@ -91,15 +137,8 @@
     border-left: 10px solid #1e293b;
   }
 
-  .desktop-right {
-    text-align: left;
-  }
-
-  .desktop-right .timeline-content {
-    margin-right: auto;
-  }
-
-  .desktop-right::before {
+  /* Espaçamento da coluna direita */
+  .timeline-item-right::before {
     content: '';
     position: absolute;
     left: -20px;

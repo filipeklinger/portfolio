@@ -49,6 +49,10 @@ const Journey = () => {
     }
   ];
 
+  // Divide os eventos em duas colunas
+  const leftEvents = events.filter((_, index) => index % 2 === 0);
+  const rightEvents = events.filter((_, index) => index % 2 === 1);
+
   return (
     <section id="journey" className="py-20 bg-slate-900 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -63,19 +67,39 @@ const Journey = () => {
         </div>
 
         <div className="timeline-container relative">
-          {events.map((event, index) => (
-            <div key={index} className={`timeline-item ${index % 2 === 0 ? 'desktop-left' : 'desktop-right'}`}>
-              <div className="timeline-dot"></div>
-              <div className="timeline-content slide-in">
-                <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="text-4xl">{event.icon}</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-100">{event.title}</h3>
+          {/* Coluna esquerda */}
+          <div className="timeline-column-left">
+            {leftEvents.map((event, index) => (
+              <div key={`left-${index}`} className="timeline-item-left slide-in">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content text-right">
+                  <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
+                  <div className="flex items-center justify-end gap-3 mb-3">
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-100">{event.title}</h3>
+                    <div className="text-4xl">{event.icon}</div>
+                  </div>
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed text-right">{event.description}</p>
                 </div>
-                <p className="text-sm md:text-base text-slate-300 leading-relaxed">{event.description}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Coluna direita */}
+          <div className="timeline-column-right">
+            {rightEvents.map((event, index) => (
+              <div key={`right-${index}`} className="timeline-item-right slide-in">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content text-left">
+                  <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="text-4xl">{event.icon}</div>
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-100">{event.title}</h3>
+                  </div>
+                  <p className="text-sm md:text-base text-slate-300 leading-relaxed">{event.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
