@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import './components/Journey.css';
 import Chatbot from './components/CustomChatbot';
 import CaseStudyModal from './components/CaseStudyModal';
 import Journey from './components/Journey';

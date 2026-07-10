@@ -71,6 +71,7 @@ export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyMo
               <i className="fas fa-user text-white text-xl"></i>
             </div>
             <h2 className="text-3xl font-bold text-slate-800">{title}</h2>
+            <br/>
             <small className="text-slate-500">{subtitle}</small>
           </div>
           

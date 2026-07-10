@@ -1,5 +1,3 @@
-import './Journey.css';
-
 const Journey = () => {
   const events = [
     {
@@ -56,7 +54,7 @@ const Journey = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="slide-in text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
-            <span className="text-blue-400"></span>Minha Jornada<span className="text-blue-400"></span>
+            <span className="text-blue-400">Minha</span> Jornada<span className="text-blue-400"></span>
           </h2>
           <div className="code-lines w-24 mx-auto mb-8"></div>
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
@@ -64,21 +62,21 @@ const Journey = () => {
           </p>
         </div>
 
-        <div className="timeline-line h-full"></div>
-
-        {events.map((event, index) => (
-          <div key={index} className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content slide-in">
-              <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="text-4xl">{event.icon}</div>
-                <h3 className="text-xl md:text-2xl font-bold text-slate-100">{event.title}</h3>
+        <div className="timeline-container relative">
+          {events.map((event, index) => (
+            <div key={index} className={`timeline-item ${index % 2 === 0 ? 'desktop-left' : 'desktop-right'}`}>
+              <div className="timeline-dot"></div>
+              <div className="timeline-content slide-in">
+                <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-4xl">{event.icon}</div>
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-100">{event.title}</h3>
+                </div>
+                <p className="text-sm md:text-base text-slate-300 leading-relaxed">{event.description}</p>
               </div>
-              <p className="text-sm md:text-base text-slate-300 leading-relaxed">{event.description}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
