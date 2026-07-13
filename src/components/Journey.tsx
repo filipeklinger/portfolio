@@ -50,9 +50,9 @@ const Journey = () => {
     },
     {
       year: "Hoje",
-      title: "Arquitetura & Sistemas Distribuídos",
-      description: "Aprofundando minha atuação em arquitetura de software, sistemas distribuídos e design de soluções escaláveis e sustentáveis.",
-      icon: "⚙️"
+      title: "Arquitetura de Sistemas",
+      description: "Foco na modernização de sistemas, evolução de arquiteturas e construção de soluções mais simples, escaláveis e sustentáveis.",
+      icon: "🧩"
     }
   ];
 
