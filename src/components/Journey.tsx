@@ -5,13 +5,13 @@ const Journey = () => {
     {
       year: "2013",
       title: "Técnico em Informática",
-      description: "Formação técnica que consolidou os fundamentos e despertou o interesse por desenvolvimento de software.",
+      description: "Onde tudo começou: os fundamentos da computação e a descoberta de que resolver problemas com software seria a minha profissão.",
       icon: "🎓"
     },
     {
       year: "2016",
       title: "Graduação em Sistemas de Informação",
-      description: "Ingresso no ensino superior, com base sólida em programação, algoritmos e engenharia de software.",
+      description: "A base formal em programação, algoritmos e engenharia de software que estrutura a minha forma de pensar até hoje.",
       icon: "💻"
     },
     {
@@ -19,7 +19,7 @@ const Journey = () => {
       title: "1º Lugar no Hackathon Embrapa",
       description: (
         <span>
-          Primeiro lugar no Hackathon Acadêmico da Embrapa com o app <strong>Restaura Mata Atlântica</strong>, atuando no design de interface (UI/UX).
+          Primeiro lugar no Hackathon Acadêmico da Embrapa com o app <strong>Restaura Mata Atlântica</strong>, cuidando da experiência do usuário (UI/UX) — meu primeiro contato próximo com produto.
         </span>
       ),
       icon: "🏆"
@@ -27,31 +27,31 @@ const Journey = () => {
     {
       year: "2019",
       title: "Desenvolvedor na UFRRJ",
-      description: "Início da atuação profissional no desenvolvimento e manutenção dos sistemas institucionais da universidade.",
+      description: "Primeira experiência profissional colocando a mão em sistemas reais, mantendo e evoluindo as aplicações que a universidade usava todos os dias.",
       icon: "🏛"
     },
     {
       year: "2020",
       title: "Desenvolvedor na TG4",
-      description: "Entrada no mercado corporativo, com atuação em projetos de grande porte e alta complexidade.",
+      description: "Entrada no mundo corporativo, atuando em projetos de grande porte para clientes exigentes dos setores financeiro e de telecom.",
       icon: "🚀"
     },
     {
       year: "2021+",
-      title: "Cloud & Arquitetura",
-      description: "Evolução para soluções escaláveis com AWS, arquitetura serverless, sistemas distribuídos e processamento assíncrono.",
+      title: "Cloud & Processamento Assíncrono",
+      description: "Migração para a nuvem com AWS e soluções serverless, aprendendo a lidar com processamento assíncrono e integrações entre serviços.",
       icon: "☁️"
     },
     {
       year: "2024",
       title: "Senior Software Engineer",
-      description: "Consolidação da atuação em decisões arquiteturais, modernização de aplicações e resolução de problemas de maior complexidade.",
+      description: "Mais responsabilidade sobre as decisões técnicas: liderar escolhas, modernizar aplicações e assumir os problemas de maior peso dos projetos.",
       icon: "🏗"
     },
     {
       year: "Hoje",
-      title: "Arquitetura de Sistemas",
-      description: "Foco na modernização de sistemas, evolução de arquiteturas e construção de soluções mais simples, escaláveis e sustentáveis.",
+      title: "Arquitetura & Design de Soluções",
+      description: "Hoje meu foco é desenhar soluções: modernizar o que existe, orientar decisões técnicas e entregar sistemas mais simples, confiáveis e fáceis de evoluir.",
       icon: "🧩"
     }
   ];
@@ -65,7 +65,7 @@ const Journey = () => {
           </h2>
           <div className="code-lines w-24 mx-auto mb-8"></div>
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
-            Uma linha do tempo da minha evolução profissional através da engenharia de software
+            Uma trajetória que evoluiu naturalmente dos fundamentos ao design de soluções
           </p>
         </Reveal>
 

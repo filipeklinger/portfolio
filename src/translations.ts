@@ -11,7 +11,7 @@ export const translations = {
   
   hero: {
     titleSenior: "Sênior Software Engineer",
-    subtitle: "Projetando arquiteturas escaláveis e desenvolvendo soluções de alto impacto para sistemas corporativos",
+    subtitle: "Gosto de entender problemas complexos e transformá-los em sistemas simples e preparados para evoluir.",
     buttonProjects: "Ver Projetos",
     buttonContact: "Entre em Contato"
   },
@@ -19,9 +19,9 @@ export const translations = {
   about: {
     title: "Sobre Mim",
     roleTitle: "Engenheiro de Software Sênior",
-    description1: "Engenheiro de Software Sênior com experiência no desenvolvimento de sistemas corporativos utilizando .NET, Angular, React, Node.js e AWS.",
-    description2: "Atuo na definição de arquitetura, evolução de aplicações legadas, desenvolvimento de APIs, sistemas distribuídos, processamento assíncrono e integração entre sistemas.",
-    description3: "Tenho interesse especial em arquitetura de software, design de soluções, otimização de performance e construção de aplicações escaláveis, sempre buscando equilibrar qualidade técnica, simplicidade e valor para o negócio.",
+    description1: "Engenheiro de Software Sênior que atua de ponta a ponta no desenvolvimento de aplicações web, trabalhando com .NET, Angular, React, Node.js e AWS.",
+    description2: "Meu trabalho começa por entender o problema e desenhar a solução, e vai até colocá-la em produção: evoluo aplicações legadas, construo APIs e integrações e cuido do processamento assíncrono que sustenta o negócio.",
+    description3: "Gosto de projetar soluções claras e sustentáveis, cuidando da performance e da qualidade do código, sempre equilibrando rigor técnico, simplicidade e valor real para o negócio.",
     projectsDelivered: "Projetos Entregues",
     yearsExperience: "Anos de Experiência"
   },
