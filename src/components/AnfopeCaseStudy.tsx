@@ -4,6 +4,9 @@ import CaseStudyModal from './CaseStudyModal';
 const anfopeProject = {
   title: "Anfope - Sistema de Gestão",
   subtitle: "Plataforma completa para gestão administrativa desenvolvida de ponta a ponta como freelancer",
+  image: "/img/anfope.webp",
+  icon: "fa-users",
+  accent: "orange" as const,
   technologies: ["HTML + JS", "PHP", "MariaDB"],
   role: "Full Stack Developer (Freelancer)",
   type: "Freelancer",
