@@ -119,9 +119,10 @@ export default function Projects() {
               Plataforma completa para monitoramento de KPIs, metas e desempenho organizacional. Dashboard interativo com visualizações em tempo real, alertas automatizados e relatórios gerenciais personalizáveis.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">React</span>
-              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Node.js</span>
-              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Angular</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">.NET</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">SQS</span>
+              <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Workers Assíncronos</span>
             </div>
             <button onClick={() => (window as any).openModal('modal6')} className="text-teal-600 hover:text-teal-800 font-semibold flex items-center">
               {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>

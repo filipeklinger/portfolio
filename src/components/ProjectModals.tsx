@@ -1,10 +1,11 @@
 /**
- * Modais dos projetos (Arbi, Tim Live, BTG Campus). Controlados via os globais
- * `openModal` / `closeModal` registrados em useSiteEffects.
+ * Modais dos projetos (Arbi, Tim Live, BTG Campus, Samsung Knox e Performance
+ * Empresarial). Controlados via os globais `openModal` / `closeModal`
+ * registrados em useSiteEffects.
  *
  * Nota: o modal da Anfope é renderizado pelo componente AnfopeCaseStudy.
- * Os cards dos projetos 5 e 6 referenciam modal5/modal6, que ainda não
- * possuem markup aqui.
+ * Os modais 5 e 6 usam um cabeçalho em gradiente com ícone, pois não possuem
+ * imagem de capa dedicada.
  */
 export default function ProjectModals() {
   return (
@@ -213,6 +214,146 @@ export default function ProjectModals() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button onClick={() => (window as any).closeModal('modal3')} className="border-2 border-slate-300 text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                  Fechar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal 5 - Samsung Knox */}
+      <div id="modal5" className="modal">
+        <div className="modal-content">
+          <div className="relative">
+            <button onClick={() => (window as any).closeModal('modal5')} className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+              <i className="fas fa-times"></i>
+            </button>
+
+            <div className="relative rounded-t-2xl overflow-hidden">
+              <div className="w-full h-64 bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center">
+                <i className="fas fa-cloud text-white text-7xl opacity-90"></i>
+              </div>
+            </div>
+
+            <div className="p-8">
+              <div className="flex items-center mb-4">
+                <div className="bg-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-cloud text-white text-xl"></i>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-800">Samsung Knox - Plataforma de Segurança</h2>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">AWS</span>
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Lambda</span>
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">SQS</span>
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">APIs REST</span>
+              </div>
+
+              <div className="prose max-w-none mb-8">
+                <h3 className="text-xl font-semibold mb-4 text-slate-800">Descrição Completa</h3>
+                <p className="text-slate-600 mb-4 leading-relaxed">
+                  Desenvolvimento da camada cloud para integração com a plataforma Samsung Knox. Criação de APIs RESTful que se comunicam com a API do Knox (via webhook ativado pelo sistema de vendas), sem uso de SDK Android. Solução serverless hospedada na AWS, processando dados de segurança empresarial em tempo real.
+                </p>
+
+                <h4 className="text-lg font-semibold mb-3 text-slate-800">Principais Funcionalidades:</h4>
+                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-6">
+                  <li>Integração com API Samsung Knox via webhook</li>
+                  <li>Solução serverless na AWS</li>
+                  <li>Processamento em tempo real de dados de segurança</li>
+                  <li>APIs RESTful para comunicação</li>
+                  <li>Escalabilidade automática</li>
+                </ul>
+
+                <div className="grid md:grid-cols-3 gap-4 mb-6">
+                  <div className="bg-slate-50 p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-pink-600">AWS</div>
+                    <div className="text-sm text-slate-600">Cloud</div>
+                  </div>
+                  <div className="bg-slate-50 p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-pink-600">Serverless</div>
+                    <div className="text-sm text-slate-600">Arquitetura</div>
+                  </div>
+                  <div className="bg-slate-50 p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-pink-600">Real-time</div>
+                    <div className="text-sm text-slate-600">Processamento</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button onClick={() => (window as any).closeModal('modal5')} className="border-2 border-slate-300 text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                  Fechar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal 6 - Sistema de Performance Empresarial */}
+      <div id="modal6" className="modal">
+        <div className="modal-content">
+          <div className="relative">
+            <button onClick={() => (window as any).closeModal('modal6')} className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-slate-600 hover:text-slate-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+              <i className="fas fa-times"></i>
+            </button>
+
+            <div className="relative rounded-t-2xl overflow-hidden">
+              <div className="w-full h-64 bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center">
+                <i className="fas fa-chart-line text-white text-7xl opacity-90"></i>
+              </div>
+            </div>
+
+            <div className="p-8">
+              <div className="flex items-center mb-4">
+                <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-chart-line text-white text-xl"></i>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-800">Sistema de Performance Empresarial</h2>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Angular</span>
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">.NET</span>
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">SQS</span>
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Workers Assíncronos</span>
+              </div>
+
+              <div className="prose max-w-none mb-8">
+                <h3 className="text-xl font-semibold mb-4 text-slate-800">Descrição Completa</h3>
+                <p className="text-slate-600 mb-4 leading-relaxed">
+                  Plataforma completa para monitoramento de KPIs, metas e desempenho organizacional. Dashboard interativo com visualizações em tempo real, alertas automatizados e relatórios gerenciais personalizáveis.
+                </p>
+
+                <h4 className="text-lg font-semibold mb-3 text-slate-800">Principais Funcionalidades:</h4>
+                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-6">
+                  <li>Monitoramento de KPIs e metas em tempo real</li>
+                  <li>Dashboard interativo com visualizações dinâmicas</li>
+                  <li>Alertas automatizados por e-mail e notificações</li>
+                  <li>Relatórios gerenciais personalizáveis</li>
+                  <li>Exportação de dados para Excel e PDF</li>
+                </ul>
+
+                <div className="grid md:grid-cols-3 gap-4 mb-6">
+                  <div className="bg-slate-50 p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-teal-600">KPIs</div>
+                    <div className="text-sm text-slate-600">Monitoramento</div>
+                  </div>
+                  <div className="bg-slate-50 p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-teal-600">Real-time</div>
+                    <div className="text-sm text-slate-600">Visualização</div>
+                  </div>
+                  <div className="bg-slate-50 p-4 rounded-lg text-center">
+                    <div className="text-2xl font-bold text-teal-600">Full Stack</div>
+                    <div className="text-sm text-slate-600">Desenvolvimento</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button onClick={() => (window as any).closeModal('modal6')} className="border-2 border-slate-300 text-slate-600 hover:bg-slate-50 px-6 py-3 rounded-lg font-semibold transition-all">
                   Fechar
                 </button>
               </div>
