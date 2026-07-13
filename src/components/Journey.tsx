@@ -41,10 +41,16 @@ const Journey = () => {
       icon: "☁️"
     },
     {
-      year: "Hoje",
+      year: "2024",
       title: "Senior Software Engineer",
-      description: "Foco em arquitetura de software, modernização de aplicações legadas e design de sistemas distribuídos.",
+      description: "Consolidação da atuação em decisões arquiteturais, modernização de aplicações e resolução de problemas de maior complexidade.",
       icon: "🏗"
+    },
+    {
+      year: "Hoje",
+      title: "Arquitetura & Sistemas Distribuídos",
+      description: "Aprofundando minha atuação em arquitetura de software, sistemas distribuídos e design de soluções escaláveis e sustentáveis.",
+      icon: "⚙️"
     }
   ];
 
