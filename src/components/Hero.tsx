@@ -1,4 +1,5 @@
 import { translations } from '../translations';
+import Reveal from './Reveal';
 
 export default function Hero() {
   return (
@@ -22,7 +23,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        <div className="slide-in">
+        <Reveal>
           <div className="floating mb-8">
             <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
               <img src="eu.jpeg" alt="Filipe Klinger" className="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover" />
@@ -42,7 +43,7 @@ export default function Hero() {
               {translations.hero.buttonContact}
             </a>
           </div>
-        </div>
+        </Reveal>
       </div>
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <i className="fas fa-chevron-down text-blue-400 text-2xl"></i>

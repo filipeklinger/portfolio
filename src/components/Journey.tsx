@@ -1,3 +1,5 @@
+import Reveal from './Reveal';
+
 const Journey = () => {
   const events = [
     {
@@ -57,7 +59,7 @@ const Journey = () => {
   return (
     <section id="journey" className="py-20 bg-slate-900 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="slide-in text-center mb-16">
+        <Reveal className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
             <span className="text-blue-400">Minha</span> Jornada
           </h2>
@@ -65,11 +67,11 @@ const Journey = () => {
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
             Uma linha do tempo da minha evolução profissional através da engenharia de software
           </p>
-        </div>
+        </Reveal>
 
         <div className="timeline">
           {events.map((event, index) => (
-            <div key={index} className="timeline-item slide-in">
+            <Reveal key={index} className="timeline-item">
               <div className="timeline-dot" aria-hidden="true"></div>
               <div className="timeline-content">
                 <span className="text-xs font-mono text-blue-400 mb-2 block">{event.year}</span>
@@ -79,7 +81,7 @@ const Journey = () => {
                 </div>
                 <p className="text-sm md:text-base text-slate-300 leading-relaxed">{event.description}</p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

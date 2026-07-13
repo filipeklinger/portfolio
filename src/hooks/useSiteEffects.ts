@@ -43,22 +43,8 @@ export function useSiteEffects() {
     // Initialize effects
     createMatrixRain();
 
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    // Observe all slide-in elements
-    document.querySelectorAll('.slide-in').forEach(el => {
-      observer.observe(el);
-    });
+    // As animações de scroll (slide-in) agora são gerenciadas por cada
+    // elemento via o componente <Reveal> / hook useInView.
 
     // Active nav link on scroll
     const handleScroll = () => {

@@ -1,4 +1,5 @@
 import { translations } from '../translations';
+import Reveal from './Reveal';
 
 // Calcula os anos de experiência desde 1 de janeiro de 2019.
 const calculateYearsOfExperience = () => {
@@ -23,15 +24,15 @@ export default function About() {
   return (
     <section id="about" className="py-20 bg-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="slide-in text-center mb-16">
+        <Reveal className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
             <span className="text-blue-400"></span>{translations.about.title}<span className="text-blue-400"></span>
           </h2>
           <div className="code-lines w-24 mx-auto mb-8"></div>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="slide-in">
+          <Reveal>
             <div className="tech-grid p-8 rounded-2xl">
               <div className="bg-gradient-to-br from-slate-700 to-slate-600 p-8 rounded-xl border border-slate-500">
                 <div className="text-6xl text-blue-400 mb-4">
@@ -53,9 +54,9 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="slide-in">
+          <Reveal>
             <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100">{translations.about.roleTitle}</h3>
             <p className="sm:text-lg text-slate-300 mb-6 leading-relaxed break-words px-4">
               {translations.about.description1}
@@ -77,7 +78,7 @@ export default function About() {
                 <div className="text-sm sm:text-base text-slate-300">{translations.about.yearsExperience}</div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,10 +1,11 @@
 import { translations } from '../translations';
+import Reveal from './Reveal';
 
 export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="slide-in text-center mb-16">
+        <Reveal className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-100">
             <span className="text-blue-400"></span>{translations.projects.title}<span className="text-blue-400"></span>
           </h2>
@@ -12,11 +13,11 @@ export default function Projects() {
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
             {translations.projects.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Project 1 */}
-          <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+          <Reveal className="project-card rounded-2xl p-6 border border-slate-700">
             <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <i className="fas fa-landmark text-white text-xl"></i>
             </div>
@@ -30,10 +31,10 @@ export default function Projects() {
             <button onClick={() => (window as any).openModal('modal1')} className="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
                {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
             </button>
-          </div>
+          </Reveal>
 
           {/* Project 2 */}
-          <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+          <Reveal className="project-card rounded-2xl p-6 border border-slate-700">
             <div className="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <i className="fas fa-shopping-cart text-white text-xl"></i>
             </div>
@@ -48,10 +49,10 @@ export default function Projects() {
             <button onClick={() => (window as any).openModal('modal2')} className="text-purple-400 hover:text-purple-300 font-semibold flex items-center">
               {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
             </button>
-          </div>
+          </Reveal>
 
           {/* Project 3 */}
-          <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+          <Reveal className="project-card rounded-2xl p-6 border border-slate-700">
             <div className="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <i className="fas fa-graduation-cap text-white text-xl"></i>
             </div>
@@ -67,10 +68,10 @@ export default function Projects() {
             <button onClick={() => (window as any).openModal('modal3')} className="text-green-600 hover:text-green-800 font-semibold flex items-center">
               {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
             </button>
-          </div>
+          </Reveal>
 
           {/* Project 4 */}
-          <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+          <Reveal className="project-card rounded-2xl p-6 border border-slate-700">
             <div className="bg-orange-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <i className="fas fa-users text-white text-xl"></i>
             </div>
@@ -86,10 +87,10 @@ export default function Projects() {
             <button onClick={() => (window as any).openAnfopeModal()} className="text-orange-400 hover:text-orange-300 font-semibold flex items-center">
               {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
             </button>
-          </div>
+          </Reveal>
 
           {/* Project 5 - Samsung Knox */}
-          <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+          <Reveal className="project-card rounded-2xl p-6 border border-slate-700">
             <div className="bg-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <i className="fas fa-cloud text-white text-xl"></i>
             </div>
@@ -106,10 +107,10 @@ export default function Projects() {
             <button onClick={() => (window as any).openModal('modal5')} className="text-pink-600 hover:text-pink-800 font-semibold flex items-center">
               {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
             </button>
-          </div>
+          </Reveal>
 
           {/* Project 6 - Performance Empresarial */}
-          <div className="slide-in project-card rounded-2xl p-6 border border-slate-700">
+          <Reveal className="project-card rounded-2xl p-6 border border-slate-700">
             <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <i className="fas fa-chart-line text-white text-xl"></i>
             </div>
@@ -125,7 +126,7 @@ export default function Projects() {
             <button onClick={() => (window as any).openModal('modal6')} className="text-teal-600 hover:text-teal-800 font-semibold flex items-center">
               {translations.projects.caseStudy} <i className="fas fa-arrow-right ml-2"></i>
             </button>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

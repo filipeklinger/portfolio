@@ -1,10 +1,11 @@
 import Chatbot from './CustomChatbot';
+import Reveal from './Reveal';
 
 export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-slate-900 text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="slide-in text-center mb-16">
+        <Reveal className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="text-blue-400">&lt;</span>Vamos Conversar<span className="text-blue-400">/&gt;</span>
           </h2>
@@ -12,10 +13,10 @@ export default function Contact() {
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
             Pronto para transformar sua ideia em realidade? Entre em contato e vamos construir algo incrível juntos.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <div className="slide-in">
+          <Reveal>
             <h3 className="text-2xl font-bold mb-6">Entre em Contato</h3>
             <div className="space-y-6">
               <a href="mailto:filipeklinger@gmail.com" className="flex items-center space-x-4 hover:bg-slate-700/50 p-3 rounded-lg transition-colors group">
@@ -58,15 +59,15 @@ export default function Contact() {
                 </div>
               </a>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="slide-in">
+          <Reveal>
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
               <div className="flex justify-center items-center min-h-[400px] w-full">
                 <Chatbot />
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
