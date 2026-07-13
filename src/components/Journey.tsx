@@ -3,48 +3,47 @@ const Journey = () => {
     {
       year: "2013",
       title: "Técnico em Informática",
-      description: "Primeiro contato profissional com desenvolvimento de software.",
+      description: "Formação técnica que consolidou os fundamentos e despertou o interesse por desenvolvimento de software.",
       icon: "🎓"
     },
     {
       year: "2016",
-      title: "Ingresso em Sistemas de Informação",
-      description: "Início da graduação e aprofundamento em desenvolvimento de software.",
+      title: "Graduação em Sistemas de Informação",
+      description: "Ingresso no ensino superior, com base sólida em programação, algoritmos e engenharia de software.",
       icon: "💻"
     },
     {
       year: "2017",
-      title: "Hackathon Embrapa",
+      title: "1º Lugar no Hackathon Embrapa",
       description: (
         <span>
-          1º Lugar no Hackathon Acadêmico da Embrapa. Desenvolvimento do aplicativo <strong>Restaura Mata Atlântica</strong>.
-          Responsável pelo design da interface (UI/UX) do aplicativo.
+          Primeiro lugar no Hackathon Acadêmico da Embrapa com o app <strong>Restaura Mata Atlântica</strong>, atuando no design de interface (UI/UX).
         </span>
       ),
       icon: "🏆"
     },
     {
       year: "2019",
-      title: "UFRRJ - Universidade Federal Rural do Rio de Janeiro",
-      description: "Desenvolvimento dos sistemas institucionais da universidade.",
+      title: "Desenvolvedor na UFRRJ",
+      description: "Início da atuação profissional no desenvolvimento e manutenção dos sistemas institucionais da universidade.",
       icon: "🏛"
     },
     {
       year: "2020",
-      title: "Entrada na TG4",
-      description: "Primeiros projetos corporativos de grande porte.",
+      title: "Desenvolvedor na TG4",
+      description: "Entrada no mercado corporativo, com atuação em projetos de grande porte e alta complexidade.",
       icon: "🚀"
     },
     {
       year: "2021+",
       title: "Cloud & Arquitetura",
-      description: "Projetos utilizando AWS, Serverless, MongoDB e processamento distribuído.",
+      description: "Evolução para soluções escaláveis com AWS, arquitetura serverless, sistemas distribuídos e processamento assíncrono.",
       icon: "☁️"
     },
     {
       year: "Hoje",
       title: "Senior Software Engineer",
-      description: "Foco em arquitetura de software, sistemas distribuídos, modernização de aplicações e soluções cloud.",
+      description: "Foco em arquitetura de software, modernização de aplicações legadas e design de sistemas distribuídos.",
       icon: "🏗"
     }
   ];
