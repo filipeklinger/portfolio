@@ -1,4 +1,4 @@
-import Chatbot from './CustomChatbot';
+// import Chatbot from './CustomChatbot';
 import Reveal from './Reveal';
 
 export default function Contact() {
