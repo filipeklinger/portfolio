@@ -15,7 +15,7 @@ export default function Contact() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="max-w-96 mx-auto flex">
           <Reveal>
             <h3 className="text-2xl font-bold mb-6">Entre em Contato</h3>
             <div className="space-y-6">
@@ -61,13 +61,13 @@ export default function Contact() {
             </div>
           </Reveal>
 
-          <Reveal>
+          {/* <Reveal>
             <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
               <div className="flex justify-center items-center min-h-[400px] w-full">
                 <Chatbot />
               </div>
             </div>
-          </Reveal>
+          </Reveal> */}
         </div>
       </div>
     </section>
