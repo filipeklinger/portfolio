@@ -1,4 +1,5 @@
 import { translations } from '../translations';
+import MatrixRainCanvas from './MatrixRainCanvas';
 import Reveal from './Reveal';
 
 export default function Hero() {
@@ -19,7 +20,7 @@ export default function Hero() {
         </div>
 
         {/* Matrix Rain Effect */}
-        <div className="matrix-rain" id="matrixRain"></div>
+        <MatrixRainCanvas className="opacity-40" speed={0.35} fps={24} />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
@@ -45,9 +46,11 @@ export default function Hero() {
           </div>
         </Reveal>
       </div>
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <i className="fas fa-chevron-down text-blue-400 text-2xl"></i>
       </div>
+      {/* Bottom Fade Transition to Next Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 sm:h-56 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-800 pointer-events-none z-10" />
     </section>
   );
 }
