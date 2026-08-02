@@ -26,8 +26,8 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <Reveal>
           <div className="floating mb-8">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
-              <img src="eu.jpeg" alt="Filipe Klinger" className="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover" />
+            <div className="w-32 h-32 sm:w-32 sm:h-32 mx-auto bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
+              <img src="eu.webp" alt="Filipe Klinger" className="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover" />
             </div>
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
