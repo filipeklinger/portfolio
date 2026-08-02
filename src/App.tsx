@@ -1,6 +1,13 @@
 import { useEffect } from 'react';
 import './App.css';
 import Chatbot from './components/CustomChatbot';
+<<<<<<< Updated upstream
+=======
+import CaseStudyModal from './components/CaseStudyModal';
+import Journey from './components/Journey';
+import MatrixRainCanvas from './components/MatrixRainCanvas';
+import { translations } from './translations';
+>>>>>>> Stashed changes
 
 function App() {
   // Função para calcular anos de experiência desde 2019
@@ -23,41 +30,11 @@ function App() {
   };
 
   useEffect(() => {
-    // Matrix Rain Effect
-    const createMatrixRain = () => {
-      const matrixContainer = document.getElementById('matrixRain');
-      if (!matrixContainer) return;
-      
-      const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-      const columns = Math.floor(window.innerWidth / 20);
-      
-      matrixContainer.innerHTML = '';
-      
-      for (let i = 0; i < columns; i++) {
-        const column = document.createElement('div');
-        column.className = 'matrix-column';
-        column.style.left = i * 20 + 'px';
-        column.style.animationDelay = Math.random() * 10 + 's';
-        column.style.animationDuration = (8 + Math.random() * 4) + 's';
-        
-        let text = '';
-        for (let j = 0; j < 20; j++) {
-          text += characters.charAt(Math.floor(Math.random() * characters.length)) + '<br>';
-        }
-        column.innerHTML = text;
-        
-        matrixContainer.appendChild(column);
-      }
-    };
-
     // Mobile menu toggle
     const toggleMobileMenu = () => {
       const menu = document.getElementById('mobileMenu');
       menu?.classList.toggle('hidden');
     };
-
-    // Initialize effects
-    createMatrixRain();
     
     // Intersection Observer for animations
     const observer = new IntersectionObserver((entries) => {
@@ -253,7 +230,7 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
           </div>
           
           {/* Matrix Rain Effect */}
-          <div className="matrix-rain" id="matrixRain"></div>
+          <MatrixRainCanvas className="opacity-40" speed={0.35} fps={24} />
         </div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
@@ -280,9 +257,12 @@ _Mensagem enviada através do portfólio de Filipe Klinger_`;
             </div>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <i className="fas fa-chevron-down text-blue-400 text-2xl"></i>
         </div>
+
+        {/* Bottom Fade Transition to Next Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 sm:h-56 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-800 pointer-events-none z-10" />
       </section>
 
       {/* About Section */}
