@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="mb-4">
           <span className="text-blue-400">&lt;</span>Filipe Klinger<span className="text-blue-400">/&gt;</span>
         </div>
-        <p className="text-sm sm:text-base">&copy; 2024 Filipe Klinger. Desenvolvido com paixão e tecnologia.</p>
+        <p className="text-sm sm:text-base">&copy; {new Date().getFullYear()} Filipe Klinger. Desenvolvido com paixão e tecnologia.</p>
       </div>
     </footer>
   );
