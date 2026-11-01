@@ -32,39 +32,41 @@ export default function About() {
         </Reveal>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <Reveal>
-            <div className="tech-grid p-8 rounded-2xl">
-              <div className="bg-gradient-to-br from-slate-700 to-slate-600 p-8 rounded-xl border border-slate-500">
+          <Reveal className="min-w-0">
+            <div className="tech-grid min-w-0 p-4 sm:p-8 rounded-2xl">
+              <div className="min-w-0 bg-gradient-to-br from-slate-700 to-slate-600 p-4 sm:p-8 rounded-xl border border-slate-500">
                 <div className="text-6xl text-blue-400 mb-4">
                   <i className="fas fa-code"></i>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <span className="text-sm font-mono text-slate-200">System.Architecture.Design()</span>
+                  <div className="flex min-w-0 items-center space-x-2">
+                    <div className="w-3 h-3 flex-shrink-0 bg-green-400 rounded-full"></div>
+                    <span className="min-w-0 break-all text-sm font-mono text-slate-200">System.Architecture.Design()</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                    <span className="text-sm font-mono text-slate-200">Code.Quality.Optimize()</span>
+                  <div className="flex min-w-0 items-center space-x-2">
+                    <div className="w-3 h-3 flex-shrink-0 bg-blue-400 rounded-full"></div>
+                    <span className="min-w-0 break-all text-sm font-mono text-slate-200">Code.Quality.Optimize()</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
-                    <span className="text-sm font-mono text-slate-200">Team.Leadership.Execute()</span>
+                  <div className="flex min-w-0 items-center space-x-2">
+                    <div className="w-3 h-3 flex-shrink-0 bg-purple-400 rounded-full"></div>
+                    <span className="min-w-0 break-all text-sm font-mono text-slate-200">Team.Leadership.Execute()</span>
                   </div>
                 </div>
               </div>
             </div>
           </Reveal>
 
-          <Reveal>
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100">{translations.about.roleTitle}</h3>
-            <p className="sm:text-lg text-slate-300 mb-6 leading-relaxed break-words px-4">
+          <Reveal className="min-w-0 w-full">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-slate-100 break-words">
+              {translations.about.roleTitle}
+            </h3>
+            <p className="text-base sm:text-lg text-slate-300 mb-6 leading-relaxed break-words px-0 sm:px-4">
               {translations.about.description1}
             </p>
-            <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-4">
+            <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-0 sm:px-4">
               {translations.about.description2}
             </p>
-            <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-4">
+            <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed break-words px-0 sm:px-4">
               {translations.about.description3}
             </p>
 
